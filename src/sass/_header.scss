@@ -1,0 +1,38 @@
+.header {
+    padding: 65px 0px;
+    font-size: 18.5px;
+    line-height: 108%;
+    font-weight: 900;
+    text-transform: uppercase;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__location {
+        display: flex;
+        align-items: center;
+    }
+    &__city {
+        padding: 0px 0px 0px 6px;
+        & a {
+            color: $color-accent;
+        }
+    }
+}
+
+.menu {
+    flex: 1 1 auto;
+    padding: 0px 0px 0px 235px;
+    &__items {
+        display: flex;
+    }
+    &__item {
+        &:not(:last-child) {
+            padding: 0px 78px 0px 0px;
+        }
+        & a {
+            color: $color-light;
+        }
+    }
+}

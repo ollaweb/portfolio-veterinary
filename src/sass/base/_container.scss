@@ -1,0 +1,18 @@
+//Настройки контейнера. DEVICE WIDTH от 1920 и ниже
+.container {
+    margin: 0px auto;
+    padding: 0px 80px;
+    @media (max-width: 1400px) {
+        max-width: 1320px;
+        padding: 0px 15px;
+    }
+    @media (max-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media (max-width: 992px) {
+        max-width: 960px;
+    }
+    @media (max-width: 768px) {
+        max-width: 720px;
+    }
+}

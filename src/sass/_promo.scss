@@ -1,0 +1,60 @@
+.promo {
+    padding: 65px 0px 80px 0px;
+    position: relative;
+    &__dots {
+        margin: 0px 0px 0px 30px;
+        width: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .slick-dots {
+            & li {
+                &:not(:last-child) {
+                    margin: 0px 0px 70px 0px;
+                }
+            }
+            & button {
+                font-size: 20px;
+                font-weight: 900;
+                color: $color-light;
+                background: inherit;
+            }
+        }
+    }
+    &__links {
+        position: absolute;
+        top: 466px;
+        left: 415px;
+    }
+    &__social {
+        margin: 197px 0px 0px 0px;
+        display: flex;
+        width: 310px;
+        justify-content: space-between;
+    }
+}
+.slider {
+    margin: 0px 0px 0px 335px;
+    position: absolute;
+    top: 0px;
+    &__item {
+        position: relative;
+    }
+    &__title {
+        font-family: "STIX Two Text", serif;
+        font-weight: 400;
+        line-height: 137%;
+        font-size: 80px;
+        height: 330px;
+        width: 760px;
+    }
+
+    &__bg {
+        width: 834px;
+        height: 786px;
+    }
+    & .slick-list {
+        height: 850px;
+        overflow: hidden;
+    }
+}
