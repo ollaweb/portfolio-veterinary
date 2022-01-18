@@ -81,23 +81,11 @@
 // ================= slick-slider ===============================
 $(document).ready(function () {
     $('.slider').slick({
+        arrows: false,
         dots: true,
         appendDots: $(".promo__dots"),
-        arrows: false,
-        slidesToShow: 1,
-        speed: 400,
-        draggable: false,
-        touchThreshold: 25,
+        autoplay: true,
+        autoplaySpeed: 4000,
         fade: true,
-        cssEase: "ease-out",
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    touchThreshold: 45,
-
-                }
-            }
-        ]
     });
 });
