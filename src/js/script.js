@@ -84,7 +84,7 @@ $(document).ready(function () {
         arrows: false,
         dots: true,
         appendDots: $(".promo__dots"),
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 4000,
         fade: true,
     });
