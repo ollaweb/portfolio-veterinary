@@ -1,0 +1,92 @@
+.services {
+    padding: 150px 0px;
+    @media (max-width: 1200px) {
+        padding: 80px 0px;
+    }
+    @media (max-width: 992px) {
+        padding: 50px 0px;
+    }
+    &__items {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(4, minmax(auto, 320px));
+        grid-template-rows: repeat(4, 220px);
+        grid-auto-rows: minmax(auto, 220px);
+        gap: 24px;
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(3, minmax(auto, 320px));
+        }
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, minmax(auto, 320px));
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: minmax(auto, 320px);
+        }
+        @media (max-width: 576px) {
+            grid-template-rows: 185px;
+            grid-auto-rows: 185px;
+        }
+    }
+    &__item {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0px 2px 10px rgb(195, 185, 181, 0.4);
+    }
+}
+
+.services-item {
+    &:hover {
+        border: 1px solid $color-light;
+        & svg {
+            & path {
+                stroke: $color-main;
+                fill: $color-main;
+            }
+        }
+    }
+    &__title {
+        font-family: "STIX Two Text", serif;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 133%;
+        color: $color-main;
+        @media (max-width: 1200px) {
+            font-size: 26px;
+        }
+        @media (max-width: 576px) {
+            font-size: 24px;
+        }
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    &__img {
+        & svg {
+            height: 90px;
+            // & path {
+            //     &:hover {
+            //         fill: $color-main;
+            //     }
+            // }
+
+            @media (max-width: 576px) {
+                height: 70px;
+            }
+        }
+        height: 90px;
+        @media (max-width: 576px) {
+            height: 70px;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -33,6 +33,7 @@
             left: 0;
         }
         & .slick-dots {
+            // width: 40px;
             @media (max-width: 576px) {
                 padding: 0px 70px;
                 display: flex;
@@ -55,6 +56,17 @@
                 &.slick-active {
                     & button {
                         color: $color-text;
+                        // &::after {
+                        //     content: "";
+                        //     position: absolute;
+                        //     top: -30%;
+                        //     left: -113%;
+                        //     width: 40px;
+                        //     height: 40px;
+                        //     border-radius: 100%;
+                        //     border: 2px solid #ede9e8;
+                        //     border-bottom: 2px solid $color-text;
+                        // }
                     }
                 }
             }
@@ -64,6 +76,8 @@
                 font-weight: 900;
                 color: $color-light;
                 background: inherit;
+                position: relative;
+
                 @media (max-width: 1400px) {
                     font-size: 18px;
                 }
@@ -224,7 +238,7 @@
             font-size: 45px;
             width: 430px;
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 992px) {
             font-size: 35px;
             width: 350px;
         }
