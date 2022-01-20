@@ -90,5 +90,39 @@ $(document).ready(function () {
     });
     $('.experts-slider').slick({
         slidesToShow: 6,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    // arrows: false,
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    // arrows: false,
+                    slidesToShow: 1,
+                }
+            },
+        ]
     });
 });
