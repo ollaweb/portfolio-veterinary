@@ -88,4 +88,7 @@ $(document).ready(function () {
         autoplaySpeed: 4000,
         fade: true,
     });
+    $('.experts-slider').slick({
+        slidesToShow: 6,
+    });
 });

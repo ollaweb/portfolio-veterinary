@@ -1,0 +1,30 @@
+.more-button {
+    display: inline - block;
+    position: relative;
+    font-size: 18.5px;
+    font-weight: 900;
+    line-height: 108%;
+    color: $color-accent;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 6.5px;
+        right: -25px;
+        transform: rotate(41deg);
+        width: 10.5px;
+        height: 2.5px;
+        background: $color-accent;
+        border-radius: 3px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: -25px;
+        transform: rotate(-41deg);
+        width: 10.5px;
+        height: 2.5px;
+        background: $color-accent;
+        border-radius: 3px;
+    }
+}
