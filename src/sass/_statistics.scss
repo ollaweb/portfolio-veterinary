@@ -1,0 +1,59 @@
+.statistics {
+    padding: 317px 0px 323px 0px;
+    @media (max-width: 1200px) {
+        padding: 220px 0px;
+    }
+    @media (max-width: 992px) {
+        padding: 150px 0px;
+    }
+    @media (max-width: 768px) {
+        padding: 100px 0px;
+    }
+    &__value {
+        margin: 0 auto;
+        padding: 0px 0px 0px 77px;
+        text-align: left;
+        max-width: 950px;
+        font-family: "STIX Two Text", serif;
+        font-size: 144px;
+        font-weight: 600;
+        line-height: 76%;
+        color: $color-main;
+        @media (max-width: 1200px) {
+            font-size: 125px;
+        }
+        @media (max-width: 992px) {
+            padding: 0px 77px;
+            font-size: 68px;
+        }
+        @media (max-width: 768px) {
+        }
+        @media (max-width: 576px) {
+            padding: 0px 30px;
+            font-size: 54px;
+        }
+    }
+    &__descr {
+        padding: 0px 0px 0px 77px;
+        margin: 0 auto;
+        max-width: 950px;
+        font-size: 80px;
+        font-weight: 500;
+        line-height: 137%;
+        color: $color-text;
+        @media (max-width: 1200px) {
+            font-size: 72px;
+        }
+        @media (max-width: 992px) {
+            padding: 0px 77px;
+            font-size: 48px;
+        }
+        @media (max-width: 768px) {
+            font-size: 36px;
+        }
+        @media (max-width: 576px) {
+            padding: 0px 30px;
+            font-size: 28px;
+        }
+    }
+}
