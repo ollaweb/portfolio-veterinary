@@ -1,13 +1,13 @@
 .statistics {
     padding: 317px 0px 323px 0px;
     @media (max-width: 1200px) {
-        padding: 220px 0px;
+        padding: 220px 0px 270px;
     }
     @media (max-width: 992px) {
-        padding: 150px 0px;
+        padding: 150px 0px 200px;
     }
     @media (max-width: 768px) {
-        padding: 100px 0px;
+        padding: 100px 0px 150px;
     }
     &__value {
         margin: 0 auto;
