@@ -36,4 +36,34 @@
             top: 10px;
         }
     }
+    &_back {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 6.5px;
+            left: -25px;
+            transform: rotate(-41deg);
+            width: 10.5px;
+            height: 2.5px;
+            background: $color-accent;
+            border-radius: 3px;
+            @media (max-width: 576px) {
+                top: 4px;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: -25px;
+            transform: rotate(41deg);
+            width: 10.5px;
+            height: 2.5px;
+            background: $color-accent;
+            border-radius: 3px;
+            @media (max-width: 576px) {
+                top: 10px;
+            }
+        }
+    }
 }

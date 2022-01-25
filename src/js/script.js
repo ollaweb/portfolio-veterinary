@@ -126,3 +126,6 @@ $(document).ready(function () {
         ]
     });
 });
+
+// ============== Header навигация по городам ===============
+const city = document.querySelector(".header__location");

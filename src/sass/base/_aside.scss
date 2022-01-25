@@ -1,0 +1,12 @@
+.aside {
+    max-width: 551px;
+    &__wrapper {
+        margin: 95px 213px 0px 0px;
+    }
+    &__title {
+        font-family: "STIX Two Text", serif;
+        font-size: 80px;
+        font-weight: 400;
+        line-height: 137%;
+    }
+}
