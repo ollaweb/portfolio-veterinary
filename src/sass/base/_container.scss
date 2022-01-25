@@ -20,4 +20,7 @@
 .content-container {
     margin: 0px auto;
     padding: 0px 230px;
+    @media (max-width: 1700px) {
+        padding: 0px 80px;
+    }
 }
