@@ -2,7 +2,7 @@
 
 //Project path settings
 const srcPath = 'src';
-const buildPath = 'build';
+const buildPath = 'dist';
 const path = {
     src: {
         html: [srcPath + '/*.html', "!" + srcPath + '/_*.html'],
