@@ -75,7 +75,7 @@
                 <aside class="aside">
                     <div class="aside__wrapper">
                         <h2 class="aside__title">
-                            Запись на прием
+                            Оформление заказа
                         </h2>
                     </div>
 
@@ -84,16 +84,15 @@
                     <a href="index.html" class="appointment__button  more-button more-button_back">
                         НАЗАД
                     </a>
-                    <div class="appointment__options order-options">
-                        <a href="order.html" class="appointment-options__item">
-                            <div class="appointment-options__descr">Онлайн-консультация</div>
-                            <div class="appointment-options__price">2000 ₽</div>
-                        </a>
-                        <a href="order.html" class="appointment-options__item">
-                            <div class="appointment-options__descr">Прием в клинике</div>
-                            <div class="appointment-options__price">Бесплатно</div>
-                        </a>
-                    </div>
+                    <form action="#" class="appointment__options order">
+                        <input name="name" type="text" placeholder="ФИО">
+                        <div class="order__col">
+                            <input name="phone" type="tel" placeholder="+7 (999) 999 99 99">
+                            <input type="text" placeholder="Желаемая дата и время приема">
+                        </div>
+                        <textarea name="message" placeholder="Коротко опишите проблему"></textarea>
+                        <button type="submit" class="button" disabled>ЗАПИСАТЬСЯ</button>
+                    </form>
                 </section>
             </div>
         </main>

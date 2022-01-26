@@ -47,3 +47,50 @@
         }
     }
 }
+
+.order {
+    & input,
+    textarea {
+        padding: 16px;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #ede9e8;
+        box-sizing: border-box;
+        border-radius: 20px;
+
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 125%;
+        color: $color-main;
+        @media (max-width: 400px) {
+            font-size: 18px;
+        }
+        &::placeholder {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 125%;
+            color: $color-light;
+            @media (max-width: 400px) {
+                font-size: 16px;
+            }
+        }
+    }
+    &__col {
+        display: flex;
+        @media (max-width: 1200px) {
+            flex-direction: column;
+        }
+        & > * {
+            &:not(:last-child) {
+                margin: 0px 25px 0px 0px;
+                @media (max-width: 1200px) {
+                    margin: 0px 0px 24px 0px;
+                }
+            }
+        }
+    }
+    & textarea {
+        min-height: 171px;
+        resize: none;
+    }
+}

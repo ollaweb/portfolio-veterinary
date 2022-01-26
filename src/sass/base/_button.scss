@@ -1,8 +1,8 @@
 .button {
     padding: 24px 77px;
     height: 67px;
-    background: #ffc59e;
-    box-shadow: 0px 4px 20px #ffc59e;
+    background: $color-accent;
+    box-shadow: 0px 4px 20px $color-accent;
     border-radius: 33.5px;
 
     font-weight: 900;
@@ -21,5 +21,9 @@
         padding: 10px 40px;
         font-size: 14px;
         height: 45px;
+    }
+    &:disabled {
+        background: $color-light;
+        box-shadow: 0px 4px 20px $color-light;
     }
 }
