@@ -7,12 +7,12 @@
         max-width: 350px;
     }
     &__wrapper {
-        margin: 95px 213px 0px 0px;
+        margin: 95px 213px 50px 0px;
         @media (max-width: 1700px) {
-            margin: 95px 120px 0px 0px;
+            margin: 95px 0px 50px;
         }
         @media (max-width: 1200px) {
-            margin: 95px 80px 0px 0px;
+            margin: 95px 50px 50px 0px;
         }
         @media (max-width: 768px) {
             margin: 30px 0px 40px 0px;
@@ -35,6 +35,33 @@
         }
         @media (max-width: 576px) {
             font-size: 28px;
+        }
+    }
+    &__menu {
+        margin: 100px 0px 0px 0px;
+        font-size: 19px;
+        font-weight: 900;
+        line-height: 158%;
+        color: $color-light;
+        @media (max-width: 1400px) {
+            margin: 70px 0px 0px 0px;
+        }
+        @media (max-width: 1200px) {
+            margin: 50px 0px 0px 0px;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            margin: 20px 0px 0px 0px;
+            font-size: 14px;
+        }
+        & > * {
+            width: 100%;
+            &:not(:last-child) {
+                margin: 0px 0px 30px 0px;
+                @media (max-width: 1200px) {
+                    margin: 0px 0px 20px 0px;
+                }
+            }
         }
     }
 }

@@ -7,8 +7,6 @@
 @import "./base/block-title";
 @import "./base/more-button";
 
-@import "./base/aside";
-
 @import "./header";
 @import "./promo";
 @import "./services";
@@ -19,5 +17,7 @@
 @import "./contacts";
 @import "./footer";
 
+@import "./base/aside";
+@import "./base/content";
 @import "./appointment";
-@import "./services-page";
+@import "./services-pages/therapy";

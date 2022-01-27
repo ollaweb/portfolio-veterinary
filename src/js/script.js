@@ -125,6 +125,9 @@ $(document).ready(function () {
             },
         ]
     });
+    $('.content-slider').slick({
+        slidesToShow: 3,
+    });
 });
 
 // ============== Header навигация по городам ===============

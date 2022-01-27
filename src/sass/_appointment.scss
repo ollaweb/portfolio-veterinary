@@ -1,14 +1,4 @@
 .appointment {
-    padding: 10px 0px 80px 0px;
-    max-width: 909px;
-    min-height: 850px;
-    flex: 1 1 auto;
-    @media (max-width: 1200px) {
-        min-height: auto;
-    }
-    &__button {
-        margin: 0px 0px 0px 25px;
-    }
     &__options {
         margin: 60px 0px 0px 0px;
         @media (max-width: 768px) {
