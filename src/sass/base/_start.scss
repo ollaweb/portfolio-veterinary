@@ -117,10 +117,22 @@ body {
     flex: 1 1 auto;
     &__container {
         display: flex;
+        flex-direction: column;
+        @media (max-width: 768px) {
+        }
+    }
+    &__wrapper {
+        display: flex;
         justify-content: space-between;
-        overflow: hidden;
         @media (max-width: 768px) {
             flex-direction: column;
+        }
+    }
+    &__button {
+        margin-top: 20px;
+        margin-left: 42.5%;
+        @media (max-width: 768px) {
+            margin-left: 25px;
         }
     }
 }

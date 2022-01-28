@@ -2,6 +2,9 @@
     &__order {
         margin-top: 54px;
         margin-bottom: 30px;
+        @media (max-width: 768px) {
+            margin-top: 30px;
+        }
     }
     &__ours {
         margin-top: 100px;

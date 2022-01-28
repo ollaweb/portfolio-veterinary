@@ -85,7 +85,7 @@ $(document).ready(function () {
         dots: true,
         appendDots: $(".promo__dots"),
         // autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 2000,
         fade: true,
     });
     $('.experts-slider').slick({
