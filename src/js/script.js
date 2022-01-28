@@ -129,16 +129,19 @@ $(document).ready(function () {
         slidesToShow: 3,
         infinite: false,
         responsive: [
+
             {
-                breakpoint: 1201,
+                breakpoint: 1730,
                 settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 769,
+                breakpoint: 993,
                 settings: {
                     slidesToShow: 1,
+                    arrows: false,
+                    dots: true,
                 }
             },
         ]

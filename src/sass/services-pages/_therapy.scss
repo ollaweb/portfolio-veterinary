@@ -1,8 +1,12 @@
 .therapy {
     &__order {
         margin-top: 54px;
+        margin-bottom: 30px;
     }
     &__ours {
         margin-top: 100px;
+        @media (max-width: 1200px) {
+            margin-top: 50px;
+        }
     }
 }
