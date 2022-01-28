@@ -137,7 +137,40 @@ $(document).ready(function () {
                 }
             },
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
                 breakpoint: 993,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+        ]
+    });
+    $('.services-slider').slick({
+        slidesToShow: 4,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                     arrows: false,
