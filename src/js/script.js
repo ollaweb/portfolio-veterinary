@@ -127,6 +127,21 @@ $(document).ready(function () {
     });
     $('.content-slider').slick({
         slidesToShow: 3,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 1201,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
     });
 });
 

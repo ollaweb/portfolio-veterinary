@@ -1,18 +1,22 @@
 .aside {
-    max-width: 551px;
-    @media (max-width: 1700px) {
-        max-width: 400px;
+    flex: 1 1 auto;
+    padding: 0px 150px;
+    @media (max-width: 1800px) {
+        padding: 0px 50px;
     }
-    @media (max-width: 1200px) {
-        max-width: 350px;
+    @media (max-width: 1400px) {
+        padding: 0px;
     }
+
     &__wrapper {
-        margin: 95px 213px 50px 0px;
+        width: 400px;
+        margin: 95px 0px 50px 0px;
         @media (max-width: 1700px) {
             margin: 95px 0px 50px;
         }
         @media (max-width: 1200px) {
-            margin: 95px 50px 50px 0px;
+            width: 300px;
+            margin: 95px 0px 50px 0px;
         }
         @media (max-width: 768px) {
             margin: 30px 0px 40px 0px;
