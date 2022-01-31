@@ -179,6 +179,25 @@ $(document).ready(function () {
             },
         ]
     });
+    $('.expert-slider').slick({
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 1201,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 993,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+        ]
+    });
 });
 
 // ============== Header навигация по городам ===============
