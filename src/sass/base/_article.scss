@@ -1,0 +1,136 @@
+.article-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.article-item {
+    & a {
+        display: flex;
+        align-items: center;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        flex: 1 0 auto;
+        position: relative;
+        margin-right: 30px;
+        width: 255px;
+
+        height: 255px;
+        @media (max-width: 1400px) {
+            width: 180px;
+            height: 180px;
+        }
+        @media (max-width: 768px) {
+            width: 220px;
+            height: 220px;
+        }
+        @media (max-width: 576px) {
+            margin: 0 auto 20px;
+            width: 100%;
+            height: 200px;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+    &__layout {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        &-promotion {
+            text-align: center;
+            justify-content: center;
+            &_ended {
+                background-color: rgba(237, 233, 232, 0.4);
+            }
+        }
+    }
+    &__logo {
+        width: 31px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__about {
+        font-weight: 900;
+        color: #fff;
+    }
+    &__tip {
+        margin-bottom: 5px;
+        display: inline-block;
+        height: 15px;
+        padding: 3px 8px;
+        background: #9076fe;
+        border-radius: 15px;
+
+        font-size: 9px;
+        line-height: 98%;
+    }
+    &__theme {
+        font-size: 18px;
+        line-height: 128%;
+    }
+
+    &__title {
+        font-family: "STIX Two Text", serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 150%;
+        color: $color-text;
+        &_ended {
+            color: $color-light;
+        }
+        @media (max-width: 1200px) {
+            font-size: 26px;
+        }
+    }
+    &__date {
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 100%;
+        color: $color-light;
+        &_ended {
+            color: $color-main;
+        }
+    }
+    &__text {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 125%;
+        color: $color-main;
+        &_ended {
+            color: $color-light;
+        }
+        @media (max-width: 1200px) {
+            font-size: 18px;
+        }
+    }
+    &__news {
+        font-weight: 900;
+        color: #fff;
+        font-size: 18px;
+        line-height: 128%;
+    }
+}
