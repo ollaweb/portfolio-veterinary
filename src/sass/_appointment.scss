@@ -1,9 +1,5 @@
 .appointment {
     &__options {
-        margin: 70px 0px 0px 0px;
-        @media (max-width: 768px) {
-            margin: 20px 0px 0px 0px;
-        }
         & > * {
             &:not(:last-child) {
                 margin: 0px 0px 24px 0px;

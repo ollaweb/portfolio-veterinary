@@ -1,6 +1,7 @@
 @import "./base/start";
 @import "./base/variables";
 @import "./base/container";
+@import "./base/main";
 
 @import "./base/burger";
 @import "./base/button";
@@ -17,7 +18,8 @@
 @import "./contacts";
 @import "./footer";
 
-@import "./base/aside";
-@import "./base/content";
+@import "./pages/aside";
+@import "./pages/content";
 @import "./appointment";
 @import "./services-pages/therapy";
+@import "./pages/blog";
