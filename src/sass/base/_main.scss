@@ -23,6 +23,12 @@
         }
     }
     &__pages {
+        margin-top: -67px;
+        margin-bottom: 33px;
+        @media (max-width: 768px) {
+            margin: 0;
+            margin-bottom: 45px;
+        }
         & ul {
             display: flex;
             justify-content: flex-end;
@@ -33,6 +39,14 @@
                 }
             }
         }
+        &_last {
+            margin: 0;
+            margin-top: 58px;
+            @media (max-width: 768px) {
+                margin: 0;
+                margin-top: 45px;
+            }
+        }
     }
     &__page {
         font-size: 20px;
@@ -41,6 +55,9 @@
         color: $color-light;
         &_active {
             color: $color-text;
+        }
+        @media (max-width: 1400px) {
+            font-size: 18px;
         }
     }
 }

@@ -1,5 +1,5 @@
 .more-button {
-    padding-left: 25px;
+    padding-right: 25px;
     display: inline - block;
     position: relative;
     font-size: 18.5px;
@@ -13,7 +13,7 @@
         content: "";
         position: absolute;
         top: 6.5px;
-        right: -25px;
+        right: 0px;
         transform: rotate(41deg);
         width: 10.5px;
         height: 2.5px;
@@ -27,7 +27,7 @@
         content: "";
         position: absolute;
         top: 12px;
-        right: -25px;
+        right: 0px;
         transform: rotate(-41deg);
         width: 10.5px;
         height: 2.5px;
@@ -38,6 +38,7 @@
         }
     }
     &_back {
+        padding-left: 25px;
         &::after {
             content: "";
             position: absolute;
