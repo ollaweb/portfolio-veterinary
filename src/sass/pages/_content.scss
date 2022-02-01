@@ -62,6 +62,13 @@
     }
 }
 
+.content-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $color-light;
+}
+
 .content-list {
     & li {
         &::before {
