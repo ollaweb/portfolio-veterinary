@@ -33,6 +33,7 @@
         display: flex;
         align-items: center;
         color: $color-accent;
+        cursor: pointer;
         &:hover {
             color: $color-main;
             & svg {
