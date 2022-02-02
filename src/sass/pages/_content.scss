@@ -6,6 +6,14 @@
         padding: 10px 0px 70px 0px;
         width: 100%;
     }
+    &__pages {
+        margin-top: -67px;
+        margin-bottom: 33px;
+        @media (max-width: 768px) {
+            margin: 0;
+            margin-bottom: 45px;
+        }
+    }
 }
 
 .content-container {
