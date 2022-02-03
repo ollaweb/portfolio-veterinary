@@ -239,6 +239,8 @@ const allCities = document.querySelectorAll(".contacts__wrapper");
 const volgograd = document.querySelector(".contacts__volgograd");
 const grozny = document.querySelector(".contacts__grozny");
 
+console.log(allCities);
+
 //Открыть модальное окно
 function modalOpen() {
     overlay.classList.add("overlay_opened");
@@ -276,25 +278,35 @@ modal.addEventListener("click", (event) => {
         if (event.target == element) {
             //Название города записать в переменную cityName
             const cityName = element.innerHTML;
-            //Если название выбранного города совпадает с тем,
-            //что уже стоит в шапке сайта,
-            //то ничего не происходит
-            if (cityName == headerCity.innerHTML) {
-                //Иначе, если мы выбрали город "Грозный"
-            } else if (cityName == "Грозный") {
-                //Скрыть все блоки в секции "Контакты"
-                allCities.forEach(city => {
-                    city.classList.remove("opened-city");
-                });
-                //Вывести блок для города "Грозный"
-                grozny.classList.add("opened-city");
-                //Аналогично для другого города
-            } else if (cityName == "Волгоград") {
-                allCities.forEach(city => {
-                    city.classList.remove("opened-city");
-                });
-                volgograd.classList.add("opened-city");
+
+            /*Если длина массива с блоками контактов = 0
+            (иначе блоков с контактами просто нет на странице),
+            то просто поменяется город в шапке,
+            и закроется модальное окно
+            */
+            if (allCities.length != 0) {
+                /*Если название выбранного города совпадает с тем,
+                что уже стоит в шапке сайта,
+                то ничего не происходит
+                */
+                if (cityName == headerCity.innerHTML) {
+                    //Иначе, если мы выбрали город "Грозный"
+                } else if (cityName == "Грозный") {
+                    //Скрыть все блоки в секции "Контакты"
+                    allCities.forEach(city => {
+                        city.classList.remove("opened-city");
+                    });
+                    //Вывести блок для города "Грозный"
+                    grozny.classList.add("opened-city");
+                    //Аналогично для другого города
+                } else if (cityName == "Волгоград") {
+                    allCities.forEach(city => {
+                        city.classList.remove("opened-city");
+                    });
+                    volgograd.classList.add("opened-city");
+                }
             }
+
             //Вписать выбранное название города из списка
             //модального окна в шапку сайта
             headerCity.textContent = cityName;

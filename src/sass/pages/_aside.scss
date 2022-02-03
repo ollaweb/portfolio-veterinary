@@ -15,6 +15,7 @@
     }
 
     &__wrapper {
+        // position: fixed;
         width: 400px;
         @media (max-width: 1200px) {
             width: 300px;
