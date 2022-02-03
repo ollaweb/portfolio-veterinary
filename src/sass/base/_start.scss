@@ -87,10 +87,8 @@ h6 {
 body {
     font-family: "Mulish", sans-serif;
     font-weight: 500;
-    @media (max-width: 768px) {
-        &._lock {
-            overflow: hidden;
-        }
+    &._lock {
+        overflow: hidden;
     }
 
     background-color: FFFEFE;
@@ -112,4 +110,8 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.opened-flex {
+    display: flex;
 }

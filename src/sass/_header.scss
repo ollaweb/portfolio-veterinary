@@ -67,6 +67,7 @@
         display: flex;
     }
     &__item {
+        color: $color-light;
         &:not(:last-child) {
             padding: 0px 78px 0px 0px;
             @media (max-width: 1590px) {
@@ -78,6 +79,95 @@
         }
         & a {
             color: $color-light;
+            &:hover {
+                color: $color-main;
+            }
+        }
+
+        &#spoiler {
+            position: relative;
         }
     }
+}
+.spoiler {
+    position: relative;
+    padding-right: 20px;
+    cursor: pointer;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 42%;
+        right: 5px;
+        width: 9px;
+        height: 3px;
+        transform: rotate(45deg);
+        background-color: $color-light;
+        border-radius: 3px;
+        @media (max-width: 1200px) {
+            width: 7px;
+            right: 7px;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 42%;
+        right: 0px;
+        width: 9px;
+        height: 3px;
+        transform: rotate(-45deg);
+        background-color: $color-light;
+        border-radius: 3px;
+        @media (max-width: 1200px) {
+            width: 7px;
+            right: 3px;
+        }
+    }
+    &:hover {
+        color: $color-main;
+        &::before {
+            background-color: $color-main;
+        }
+        &::after {
+            background-color: $color-main;
+        }
+    }
+    &__wrapper {
+        padding: 30px;
+        position: absolute;
+        top: 30px;
+        left: -30px;
+        display: none;
+        flex-direction: column;
+        width: 230px;
+
+        background: #ffffff;
+        box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);
+        border-radius: 20px;
+
+        z-index: 1099;
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &__item {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        color: $color-text;
+        text-transform: none;
+        cursor: pointer;
+        & a {
+            display: block;
+            color: inherit;
+        }
+        &:hover {
+            font-weight: 800;
+        }
+    }
+}
+.opened-spoiler {
+    display: flex;
 }

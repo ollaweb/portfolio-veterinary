@@ -80,6 +80,16 @@
         //     }
         // }
     }
+    &__volgograd {
+        display: none;
+    }
+    &__grozny {
+        display: none;
+    }
+}
+
+.opened-city {
+    display: flex;
 }
 
 .address {
