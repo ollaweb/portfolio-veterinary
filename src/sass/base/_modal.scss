@@ -12,6 +12,7 @@
 }
 
 .modal {
+    display: none;
     padding: 20px 20px 50px;
     position: absolute;
     top: 50%;
@@ -20,11 +21,30 @@
     background: #ffffff;
     box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);
     border-radius: 20px;
-    &#city {
+    &_location {
         width: 400px;
         @media (max-width: 576px) {
             width: 70%;
         }
+    }
+    &_login {
+        width: 270px;
+    }
+    & input {
+        padding: 16px;
+        margin-bottom: 32px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 125%;
+        color: $color-main;
+        background: #ffffff;
+        border: 1px solid #ede9e8;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    &_opened {
+        display: block;
     }
     &__close {
         top: 0;
@@ -65,7 +85,7 @@
             }
         }
     }
-    &__select-city {
+    &__title {
         margin-bottom: 40px;
         font-family: "STIX Two Text", serif;
         font-size: 30px;
@@ -96,5 +116,9 @@
         &:hover {
             color: $color-accent;
         }
+    }
+    &__button {
+        display: block;
+        margin: 0 auto;
     }
 }

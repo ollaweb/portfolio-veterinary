@@ -23,23 +23,24 @@
 
                 </div>
                 <nav class="header__menu menu">
+                    <div class="menu__block"></div>
                     <ul class="menu__items">
                         <li class="menu__item">
-                            <a href="#login">Личный кабинет</a>
+                            <a href="#" id="login">Личный кабинет</a>
                         </li>
                         <li class="menu__item" id="spoiler">
                             <div class="spoiler">О нас</div>
-                            <div class="spoiler__wrapper">
-                                <div class="spoiler__item">
-                                    <a href="#services">Услуги и цены</a>
-                                </div>
-                                <div class="spoiler__item">
+                            <ul class="spoiler__wrapper">
+                                <li class="spoiler__item">
+                                    <a href="index.html#services">Услуги и цены</a>
+                                </li>
+                                <li class="spoiler__item">
                                     <a href="experts.html">Коллектив</a>
-                                </div>
-                                <div class="spoiler__item">
+                                </li>
+                                <li class="spoiler__item">
                                     <a href="history.html">История компании</a>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item">
                             <a href="news.html">Новости и акции</a>
@@ -1010,13 +1011,22 @@
             </div>
         </footer>
         <div class="overlay">
-            <div class="modal" id="city">
+            <div class="modal modal_location">
                 <div class="modal__close"></div>
-                <div class="modal__select-city">Ваш город</div>
+                <div class="modal__title">Ваш город</div>
                 <div class="modal__city-list">
                     <div class="modal__city">Волгоград</div>
                     <div class="modal__city">Грозный</div>
                 </div>
+            </div>
+            <div class="modal modal_login">
+                <div class="modal__close"></div>
+                <div class="modal__title">Вход или <br> регистрация</div>
+                <form class="modal__form" action="#" enctype="multipart/form-data">
+                    <input type="tel" name="phone" placeholder="+7 (999) 999 99 99" required>
+                    <button class="modal__button button" disabled>Далее</button>
+                </form>
+
             </div>
         </div>
 

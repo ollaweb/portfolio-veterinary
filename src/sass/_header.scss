@@ -1,4 +1,5 @@
 .header {
+    // position: relative;
     padding: 65px 0px;
     font-size: 18.5px;
     line-height: 108%;
@@ -13,11 +14,16 @@
     }
     @media (max-width: 992px) {
         padding: 15px 0px;
+        font-size: 18px;
+    }
+    @media (max-width: 768px) {
+        font-size: 16px;
     }
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // position: relative;
     }
     &__logo {
         @media (max-width: 992px) {
@@ -54,6 +60,7 @@
 .menu {
     flex: 1 1 auto;
     padding: 0px 0px 0px 235px;
+
     @media (max-width: 1400px) {
         padding: 0px 0px 0px 120px;
     }
@@ -61,13 +68,63 @@
         padding: 0px 0px 0px 70px;
     }
     @media (max-width: 992px) {
+        transition: all 0.6s ease-out;
+        padding: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        // left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(8, 6, 6, 0.5);
+        z-index: 1199;
+        &.opened-menu {
+            left: 0;
+        }
+    }
+    &__block {
         display: none;
+        @media (max-width: 992px) {
+            margin: 0 0 0 auto;
+            display: block;
+            width: 60%;
+            height: 90px;
+            background-color: #fff;
+        }
+        @media (max-width: 576px) {
+            height: 70px;
+            width: 80%;
+        }
     }
     &__items {
         display: flex;
+        @media (max-width: 992px) {
+            // position: relative;
+            margin: 0 0 0 auto;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            flex-direction: column;
+            width: 60%;
+            align-items: center;
+            background-color: #fff;
+            height: calc(100vh - 90px);
+            overflow: scroll;
+        }
+        @media (max-width: 576px) {
+            height: calc(100vh - 70px);
+            padding-bottom: 10px;
+            padding-top: 0;
+        }
+        @media (max-width: 576px) {
+            width: 80%;
+        }
     }
     &__item {
         color: $color-light;
+        @media (max-width: 992px) {
+            padding: 10px;
+        }
         &:not(:last-child) {
             padding: 0px 78px 0px 0px;
             @media (max-width: 1590px) {
@@ -76,9 +133,19 @@
             @media (max-width: 1200px) {
                 padding: 0px 30px 0px 0px;
             }
+            @media (max-width: 992px) {
+                padding: 10px 10px 30px 10px;
+                justify-self: center;
+            }
+            @media (max-width: 576px) {
+                padding: 10px 10px 20px 10px;
+            }
         }
         & a {
             color: $color-light;
+            @media (max-width: 992px) {
+                padding: 10px;
+            }
             &:hover {
                 color: $color-main;
             }
@@ -89,6 +156,7 @@
         }
     }
 }
+
 .spoiler {
     position: relative;
     padding-right: 20px;
@@ -132,6 +200,7 @@
             background-color: $color-main;
         }
     }
+
     &__wrapper {
         padding: 30px;
         position: absolute;
@@ -149,7 +218,22 @@
         & > * {
             &:not(:last-child) {
                 margin-bottom: 15px;
+                @media (max-width: 992px) {
+                    margin-bottom: 10px;
+                }
+                @media (max-width: 576px) {
+                    margin: 0;
+                }
             }
+        }
+        @media (max-width: 992px) {
+            padding: 0;
+            width: 100%;
+            position: static;
+            background: none;
+            box-shadow: none;
+            border-radius: none;
+            align-items: center;
         }
     }
     &__item {
@@ -166,8 +250,28 @@
         &:hover {
             font-weight: 800;
         }
+        @media (max-width: 992px) {
+            font-weight: 500;
+            line-height: 108%;
+            color: $color-light;
+            text-transform: uppercase;
+        }
+        @media (max-width: 768px) {
+            font-size: 13px;
+        }
+    }
+}
+
+#spoiler {
+    @media (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 .opened-spoiler {
     display: flex;
+    @media (max-width: 992px) {
+        padding-top: 15px;
+    }
 }

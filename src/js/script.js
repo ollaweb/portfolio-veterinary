@@ -1,4 +1,35 @@
 "use strict";
+
+// ============== Header открытие спойлера ===============
+const spoiler = document.querySelector(".spoiler");
+const spoilerWrapper = document.querySelector(".spoiler__wrapper");
+const spoilerItem = document.querySelectorAll(".spoiler__item a");
+
+//Закрыьть блок спойлера
+function spoilerHide() {
+    spoilerWrapper.classList.remove("opened-spoiler");
+}
+
+//Переключение открыто/закрыто спойлера
+function spoilerToggle() {
+    spoilerWrapper.classList.toggle("opened-spoiler");
+}
+
+//Когда нажато "О нас" спойлер открывается, закрывается
+spoiler.addEventListener("click", () => {
+    spoilerToggle();
+});
+//Нажатие на пункт меню из блока спойлера закройдет блок спойлера
+spoilerWrapper.addEventListener("click", (event) => {
+    console.log(event.target);
+    spoilerItem.forEach(element => {
+        if (event.target == element) {
+            spoilerHide();
+        }
+    });
+});
+
+
 //================== Меню бургер =========================
 
 /*
@@ -7,37 +38,166 @@
 */
 
 const body = document.querySelector("body")
-// const burger = document.querySelector(".burger");
-// const burgerItems = document.querySelector(".burger__items");
-// const menuAside = document.querySelector(".menu__items");
-// const menu = document.querySelector(".menu");
+const burger = document.querySelector(".burger");
+const burgerItems = document.querySelector(".burger__items");
+const menuAside = document.querySelector(".menu__items");
+const menu = document.querySelector(".menu");
+
+/*
+Фукция, которая работает при ширине экрана 992пикселя
+и меньше. 
+Открывает/скрывает меню сбоку с подложкой, переводит бургер в крестик
+и обратно в бургер, блокирует прокрутку body
+*/
+function burgerSwitch() {
+    if (window.innerWidth <= 992) {
+        menu.classList.toggle("opened-menu");
+        burgerItems.classList.toggle("_opened");
+        body.classList.toggle("_lock");
+    }
+
+}
+/*
+Если меню-бургер закрыто, а спойлер в меню открыт остался, 
+то закрыть спойлер 
+*/
+function spoilerHideWithCloseBurger() {
+    if (!burgerItems.classList.contains("_opened") && spoilerWrapper.classList.contains("opened-spoiler")) {
+        spoilerHide();
+    }
+}
+/* 
+Если ширина экрана менее или равна 992пикселя
+и куда нажали - это подложка выезжающего меню,
+то закрыть бургер, убрать спойлер, если открыт, разблокировать body
+*/
+menu.addEventListener("click", (event) => {
+    if (window.innerWidth <= 992 && event.target == menu) {
+        burgerSwitch();
+        spoilerHideWithCloseBurger();
+    }
+});
+
+burger.addEventListener("click", () => {
+    burgerSwitch();
+    spoilerHideWithCloseBurger();
+});
 
 
-// function burgerSwitch() {
-//     if (window.innerWidth <= 768) {
-//         menuAside.classList.toggle("_opened");
-//         burgerItems.classList.toggle("_opened");
-//         body.classList.toggle("_lock");
-//     }
+const menuItemsLink = document.querySelectorAll(".menu__item");
 
-// }
-
-// burger.addEventListener("click", () => {
-//     burgerSwitch();
-// });
+menuItemsLink.forEach(item => {
+    const link = item.querySelector("a");
+    link.addEventListener("click", (e) => {
+        e.stopPropagation();
+        burgerSwitch();
+        spoilerHideWithCloseBurger();
+    });
+});
 
 
-// const menuItemsLink = document.querySelectorAll(".menu__item");
+// ============== Header Модальное окно и навигация по городам ===============
+const headerLocation = document.querySelector(".header__location");
+const headerCity = document.querySelector(".header__city");
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelectorAll(".modal");
+const modalLocation = document.querySelector(".modal_location");
+const modalCity = document.querySelectorAll(".modal__city");
+const modalClose = document.querySelectorAll(".modal__close");
+const allCities = document.querySelectorAll(".contacts__wrapper");
+const volgograd = document.querySelector(".contacts__volgograd");
+const grozny = document.querySelector(".contacts__grozny");
 
-// menuItemsLink.forEach(item => {
-//     const link = item.querySelector("a");
-//     link.addEventListener("click", (e) => {
-//         e.stopPropagation();
-//         burgerSwitch();
+//Открыть модальное окно
+function modalOpen(modalModify) {
+    overlay.classList.add("overlay_opened");
+    modalModify.classList.add("modal_opened");
+    body.classList.toggle("_lock");
+}
 
-//     });
-// });
+//Скрыть модальное окно
+function modalHide() {
+    overlay.classList.remove("overlay_opened");
+    body.classList.toggle("_lock");
+    modal.forEach(modal => {
+        modal.classList.remove("modal_opened");
+    });
+}
 
+//При клике на локацию в шапке сайта откроется модальное окно
+headerLocation.addEventListener("click", () => {
+    modalOpen(modalLocation);
+
+});
+
+//При клике на крестик модального окна, модальное окно скроется
+modalClose.forEach(x => {
+    x.addEventListener("click", () => {
+        modalHide();
+    });
+});
+
+//При клике на затемненную подложку модальное окно скроется
+overlay.addEventListener("click", (event) => {
+    if (event.target == overlay) {
+        modalHide();
+    }
+});
+
+//Работа при клике в модальном окне
+modalLocation.addEventListener("click", (event) => {
+    //Для каждого города, что есть в списке модального окна
+    modalCity.forEach(element => {
+        //Если мы нажали на любой город в списке мордального окна
+        if (event.target == element) {
+            //Название города записать в переменную cityName
+            const cityName = element.innerHTML;
+
+            /*Если длина массива с блоками контактов = 0
+            (иначе блоков с контактами просто нет на странице),
+            то просто поменяется город в шапке,
+            и закроется модальное окно
+            */
+            if (allCities.length != 0) {
+                /*Если название выбранного города совпадает с тем,
+                что уже стоит в шапке сайта,
+                то ничего не происходит
+                */
+                if (cityName == headerCity.innerHTML) {
+                    //Иначе, если мы выбрали город "Грозный"
+                } else if (cityName == "Грозный") {
+                    //Скрыть все блоки в секции "Контакты"
+                    allCities.forEach(city => {
+                        city.classList.remove("opened-city");
+                    });
+                    //Вывести блок для города "Грозный"
+                    grozny.classList.add("opened-city");
+                    //Аналогично для другого города
+                } else if (cityName == "Волгоград") {
+                    allCities.forEach(city => {
+                        city.classList.remove("opened-city");
+                    });
+                    volgograd.classList.add("opened-city");
+                }
+            }
+
+            //Вписать выбранное название города из списка
+            //модального окна в шапку сайта
+            headerCity.textContent = cityName;
+            //Скрыть модальное окно
+            modalHide();
+        }
+    });
+});
+
+// ==============Модальное окно личного кабинета ===============
+const logIn = document.getElementById("login");
+const modalLogin = document.querySelector(".modal_login");
+console.log(logIn);
+console.log(modalLogin);
+logIn.addEventListener("click", () => {
+    modalOpen(modalLogin);
+});
 // ================= Стрелка наверх ========================
 
 /*
@@ -199,119 +359,4 @@ $(document).ready(function () {
         ]
     });
 });
-// ============== Header открытие спойлера ===============
-const spoiler = document.querySelector(".spoiler");
-const spoilerWrapper = document.querySelector(".spoiler__wrapper");
-const spoilerItem = document.querySelectorAll(".spoiler__item a");
 
-//Закрыьть блок спойлера
-function spoilerHide() {
-    spoilerWrapper.classList.remove("opened-spoiler");
-}
-
-//Переключение открыто/закрыто спойлера
-function spoilerToggle() {
-    spoilerWrapper.classList.toggle("opened-spoiler");
-}
-
-//Когда нажато "О нас" спойлер открывается, закрывается
-spoiler.addEventListener("click", () => {
-    spoilerToggle();
-});
-//Нажатие на пункт меню из блока спойлера закройдет блок спойлера
-spoilerWrapper.addEventListener("click", (event) => {
-    console.log(event.target);
-    spoilerItem.forEach(element => {
-        if (event.target == element) {
-            spoilerHide();
-        }
-    });
-});
-
-// ============== Header навигация по городам ===============
-const headerLocation = document.querySelector(".header__location");
-const headerCity = document.querySelector(".header__city");
-const overlay = document.querySelector(".overlay");
-const modal = document.querySelector(".modal");
-const modalCity = document.querySelectorAll(".modal__city");
-const modalClose = document.querySelector(".modal__close");
-const allCities = document.querySelectorAll(".contacts__wrapper");
-const volgograd = document.querySelector(".contacts__volgograd");
-const grozny = document.querySelector(".contacts__grozny");
-
-console.log(allCities);
-
-//Открыть модальное окно
-function modalOpen() {
-    overlay.classList.add("overlay_opened");
-}
-
-//Скрыть модальное окно
-function modalHide() {
-    overlay.classList.remove("overlay_opened");
-    body.classList.toggle("_lock");
-}
-
-//При клике на локацию в шапке сайта откроется модальное окно
-headerLocation.addEventListener("click", (event) => {
-    modalOpen();
-    body.classList.toggle("_lock");
-});
-
-//При клике на крестик модального окна, модальное окно скроется
-modalClose.addEventListener("click", () => {
-    modalHide();
-});
-
-//При клике на затемненную подложку модальное окно скроется
-overlay.addEventListener("click", (event) => {
-    if (event.target == overlay) {
-        modalHide();
-    }
-});
-
-//Работа при клике в модальном окне
-modal.addEventListener("click", (event) => {
-    //Для каждого города, что есть в списке модального окна
-    modalCity.forEach(element => {
-        //Если мы нажали на любой город в списке мордального окна
-        if (event.target == element) {
-            //Название города записать в переменную cityName
-            const cityName = element.innerHTML;
-
-            /*Если длина массива с блоками контактов = 0
-            (иначе блоков с контактами просто нет на странице),
-            то просто поменяется город в шапке,
-            и закроется модальное окно
-            */
-            if (allCities.length != 0) {
-                /*Если название выбранного города совпадает с тем,
-                что уже стоит в шапке сайта,
-                то ничего не происходит
-                */
-                if (cityName == headerCity.innerHTML) {
-                    //Иначе, если мы выбрали город "Грозный"
-                } else if (cityName == "Грозный") {
-                    //Скрыть все блоки в секции "Контакты"
-                    allCities.forEach(city => {
-                        city.classList.remove("opened-city");
-                    });
-                    //Вывести блок для города "Грозный"
-                    grozny.classList.add("opened-city");
-                    //Аналогично для другого города
-                } else if (cityName == "Волгоград") {
-                    allCities.forEach(city => {
-                        city.classList.remove("opened-city");
-                    });
-                    volgograd.classList.add("opened-city");
-                }
-            }
-
-            //Вписать выбранное название города из списка
-            //модального окна в шапку сайта
-            headerCity.textContent = cityName;
-            //Скрыть модальное окно
-            modalHide();
-        }
-    });
-});
