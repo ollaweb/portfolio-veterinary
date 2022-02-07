@@ -52,6 +52,7 @@ const menu = document.querySelector(".menu");
 function burgerSwitch() {
     if (window.innerWidth <= 992) {
         menu.classList.toggle("opened-menu");
+        headerLocation.classList.toggle("opened-location");
         burgerItems.classList.toggle("_opened");
         body.classList.toggle("_lock");
     }
@@ -193,11 +194,30 @@ modalLocation.addEventListener("click", (event) => {
 // ==============Модальное окно личного кабинета ===============
 const logIn = document.getElementById("login");
 const modalLogin = document.querySelector(".modal_login");
-console.log(logIn);
-console.log(modalLogin);
 logIn.addEventListener("click", () => {
     modalOpen(modalLogin);
 });
+
+
+
+//===== Валидация формы модального окна =========
+// const form = document.querySelector(".modal__form");
+// function validateForm(selectedForm) {
+//     const input = selectedForm.querySelector('input[type="tel"]');
+//     const button = selectedForm.querySelector("button");
+//     input.addEventListener("focus", () => {
+//         input.value = "+7";
+//     });
+//     input.addEventListener("input", () => {
+//         console.log(input.value.length);
+//         if (input.value.length == 12) {
+//             button.removeAttribute("disabled");
+//         } else {
+//             button.setAttribute("disabled", "disabled");
+//         }
+//     });
+// }
+// validateForm(form);
 // ================= Стрелка наверх ========================
 
 /*

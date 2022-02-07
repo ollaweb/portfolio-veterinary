@@ -1,0 +1,57 @@
+.personal-card {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #ede9e8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 15px;
+        color: $color-light;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 25px;
+        color: $color-text;
+    }
+    &__bio {
+        display: flex;
+    }
+    &__photo {
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__img {
+        width: 130px;
+        height: 130px;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+    &__change {
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 30px;
+        color: $color-accent;
+    }
+    &__names {
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__about {
+        max-width: 410px;
+    }
+}
