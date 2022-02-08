@@ -92,6 +92,9 @@ burger.addEventListener("click", () => {
 
 
 const menuItemsLink = document.querySelectorAll(".menu__item");
+/*Когда нажали на пункт меню из бургера, 
+то идет переход по ссылке, а меню-бургер закрывается
+*/
 
 menuItemsLink.forEach(item => {
     const link = item.querySelector("a");
@@ -133,6 +136,7 @@ function modalHide() {
 
 //При клике на локацию в шапке сайта откроется модальное окно
 headerLocation.addEventListener("click", () => {
+    burgerSwitch();
     modalOpen(modalLocation);
 
 });
@@ -486,3 +490,6 @@ $('a[href^="#"').on('click', function () {
     return false;
 });
 
+// ========== Номера страниц в блоге ===============
+// const pagesArray = document.querySelectorAll(".pages__page");
+// console.log(pagesArray);
