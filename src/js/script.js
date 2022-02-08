@@ -51,6 +51,7 @@ const menu = document.querySelector(".menu");
 */
 function burgerSwitch() {
     if (window.innerWidth <= 992) {
+        overlay.classList.toggle("overlay_opened");
         menu.classList.toggle("opened-menu");
         headerLocation.classList.toggle("opened-location");
         burgerItems.classList.toggle("_opened");
@@ -191,9 +192,23 @@ modalLocation.addEventListener("click", (event) => {
     });
 });
 
+// ==============Модальное окно отзыва ===============
+const leaveFeedback = document.querySelector(".aside__feedback");
+const modalFeedback = document.querySelector(".modal_feedback");
+
+
+if (leaveFeedback) {
+    leaveFeedback.addEventListener("click", () => {
+        modalOpen(modalFeedback);
+    });
+
+}
+
+
 // ==============Модальное окно личного кабинета ===============
 const logIn = document.getElementById("login");
 const modalLogin = document.querySelector(".modal_login");
+
 logIn.addEventListener("click", () => {
     modalOpen(modalLogin);
 });
@@ -443,5 +458,26 @@ $(document).ready(function () {
             },
         ]
     });
+});
+
+// ========== Плавный скролл по якорным ссылкам ===============
+$('a[href^="#"').on('click', function () {
+
+    let href = $(this).attr('href');
+
+    if (href == "#up") {
+        $('html, body').animate({
+            scrollTop: $(href).offset().top
+        }, {
+            duration: 400,
+        });
+    } else {
+        $('html, body').animate({
+            scrollTop: $(href).offset().top
+        }, {
+            duration: 700,
+        });
+    }
+    return false;
 });
 

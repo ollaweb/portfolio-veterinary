@@ -1,12 +1,13 @@
 .personal {
     &__card {
-        &:first-child {
+        &-wrapper {
             margin-bottom: 100px !important;
             @media (max-width: 992px) {
                 margin-bottom: 50px !important;
             }
         }
     }
+
     &__add {
         padding: 10px 30px;
         display: flex;
@@ -14,6 +15,10 @@
         background: $color-accent;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
+        cursor: pointer;
+        &:hover {
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        }
 
         &-icon {
             width: 130px;
@@ -91,10 +96,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (max-width: 500px) {
+            margin: 0;
+        }
     }
     &__img {
         width: 130px;
         height: 130px;
+        margin-bottom: 30px;
         @media (max-width: 1600px) {
             width: 90px;
             height: 90px;
@@ -102,6 +111,7 @@
         @media (max-width: 1200px) {
             width: 130px;
             height: 130px;
+            margin-bottom: 15px;
         }
         @media (max-width: 576px) {
             width: 90px;
@@ -119,6 +129,7 @@
         font-size: 20px;
         line-height: 30px;
         color: $color-accent;
+        text-align: center;
         @media (max-width: 1500px) {
             font-size: 18px;
         }
@@ -134,13 +145,48 @@
         }
     }
     &__about {
+        display: flex;
+        flex-direction: column;
         width: 410px;
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
         @media (max-width: 1500px) {
             width: 315px;
         }
         @media (max-width: 1200px) {
             margin-top: 20px;
             width: 100%;
+        }
+    }
+}
+
+.personal-pet {
+    &__name {
+        font-family: "STIX Two Text", serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 50px;
+        color: $color-text;
+        @media (max-width: 576px) {
+            font-size: 26px;
+        }
+    }
+}
+
+.personal-appointment {
+    &__about {
+        @media (max-width: 1200px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            & > * {
+                &:not(:last-child) {
+                    padding-right: 30px;
+                }
+            }
         }
     }
 }
