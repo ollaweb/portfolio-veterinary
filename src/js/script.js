@@ -199,7 +199,25 @@ modalLocation.addEventListener("click", (event) => {
 // ==============Модальное окно отзыва ===============
 const leaveFeedback = document.querySelector(".aside__feedback");
 const modalFeedback = document.querySelector(".modal_feedback");
+const modalForm = document.querySelectorAll(".modal__form");
+const modalInputs = document.querySelectorAll(".modal__input");
 
+const modalThanks = document.querySelector(".modal_thanks");
+
+async function postData(url, data) {
+    const result = await fetch(url, {
+        method: "POST",
+        body: data
+    });
+
+    return await result.text();
+};
+
+function clearInputs() {
+    modalInputs.forEach(input => {
+        input.value = "";
+    });
+}
 
 if (leaveFeedback) {
     leaveFeedback.addEventListener("click", () => {
@@ -208,6 +226,26 @@ if (leaveFeedback) {
 
 }
 
+modalForm.forEach(form => {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        postData("./../server.php", formData)
+            .then(res => {
+                console.log(res);
+                modalHide();
+                if (form.classList.contains("modal__form_feedback")) {
+                    modalOpen(modalThanks);
+                }
+            })
+            .catch(() => {
+                console.log("Error!");
+            })
+            .finally(() => {
+                clearInputs();
+            })
+    });
+});
 
 // ==============Модальное окно личного кабинета ===============
 const logIn = document.getElementById("login");

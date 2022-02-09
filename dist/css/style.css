@@ -284,6 +284,10 @@ body._lock {
   width: 600px;
 }
 
+.modal_thanks {
+  width: 500px;
+}
+
 .modal input {
   padding: 16px;
   margin-bottom: 32px;
@@ -393,6 +397,15 @@ body._lock {
 .modal__button {
   display: block;
   margin: 0 auto;
+}
+
+.modal__thanks-text {
+  padding: 50px;
+  font-weight: 500;
+  font-size: 16.5px;
+  line-height: 150%;
+  text-align: center;
+  color: #080606;
 }
 
 .burger {
@@ -1997,6 +2010,7 @@ body._lock {
 }
 
 .expert-slider__item {
+  margin: 0 8px;
   padding: 16px;
   background: #ffffff;
   border: 1px solid #ede9e8;
@@ -3085,6 +3099,14 @@ body._lock {
     margin-left: 0;
   }
 
+  .modal_feedback {
+    width: 70%;
+  }
+
+  .modal_thanks {
+    width: 70%;
+  }
+
   .button {
     padding: 10px 40px;
     font-size: 14px;
@@ -3358,16 +3380,17 @@ body._lock {
     width: 70%;
   }
 
-  .modal_feedback {
-    width: 70%;
-  }
-
   .modal input {
     font-size: 16px;
   }
 
   .modal__title {
     font-size: 24px;
+  }
+
+  .modal__thanks-text {
+    padding: 0;
+    font-size: 14px;
   }
 
   .burger {

@@ -10,6 +10,7 @@ const path = {
         js: srcPath + '/js/**/*.js',
         img: srcPath + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: srcPath + '/fonts/**/*.{woff,woff2,ttf}',
+        php: srcPath + '/*.php',
     },
     watch: {
         html: srcPath + '/**/*.html',
@@ -17,6 +18,7 @@ const path = {
         js: srcPath + '/js/**/*.js',
         img: srcPath + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: srcPath + '/fonts/**/*.{woff,woff2,ttf}',
+        php: srcPath + '/**/*.php',
     },
     build: {
         html: buildPath + '/',
@@ -24,6 +26,7 @@ const path = {
         js: buildPath + '/js',
         img: buildPath + '/img',
         fonts: buildPath + '/fonts',
+        php: buildPath + '/',
     },
     clean: './' + buildPath,
 }
@@ -108,6 +111,13 @@ function fonts() {
         .pipe(browserSync.stream())
 }
 
+//Перенос файлов php в папку dist
+function php() {
+    return src(path.src.php)
+        .pipe(dest(path.build.php))
+        .pipe(browserSync.stream())
+}
+
 //Delete files before export new ones
 function clean() {
     return del(path.clean)
@@ -120,9 +130,10 @@ function watchFiles() {
     watch([path.watch.js], js);
     watch([path.watch.img], images);
     watch([path.watch.fonts], fonts);
+    watch([path.watch.php], php);
 }
 
-let build = series(clean, parallel(html, css, js, images, fonts));
+let build = series(clean, parallel(html, css, js, images, fonts, php));
 let taskManager = parallel(build, watchFiles, sync);
 
 
@@ -131,6 +142,7 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
+exports.php = php;
 exports.clean = clean;
 exports.build = build;
 exports.sync = sync;
