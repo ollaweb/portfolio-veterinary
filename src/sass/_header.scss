@@ -81,6 +81,9 @@
 .menu {
     flex: 1 1 auto;
     padding: 0px 0px 0px 235px;
+    & #login {
+        cursor: pointer;
+    }
 
     @media (max-width: 1400px) {
         padding: 0px 0px 0px 120px;

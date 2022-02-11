@@ -21,7 +21,6 @@ spoiler.addEventListener("click", () => {
 });
 //Нажатие на пункт меню из блока спойлера закройдет блок спойлера
 spoilerWrapper.addEventListener("click", (event) => {
-    console.log(event.target);
     spoilerItem.forEach(element => {
         if (event.target == element) {
             spoilerHide();
@@ -93,11 +92,21 @@ const menuItemsLink = document.querySelectorAll(".menu__item");
 
 menuItemsLink.forEach(item => {
     const link = item.querySelector("a");
-    link.addEventListener("click", (e) => {
-        e.stopPropagation();
-        burgerSwitch();
-        spoilerHideWithCloseBurger();
-    });
+    if (link) {
+        link.addEventListener("click", (e) => {
+            e.stopPropagation();
+            burgerSwitch();
+            spoilerHideWithCloseBurger();
+        });
+    } else {
+        item.addEventListener("click", () => {
+
+            burgerSwitch();
+            spoilerHideWithCloseBurger();
+            modalOpen(modalLogin);
+        });
+    }
+
 });
 
 
@@ -117,13 +126,15 @@ const grozny = document.querySelector(".contacts__grozny");
 function modalOpen(modalModify) {
     overlay.classList.add("overlay_opened");
     modalModify.classList.add("modal_opened");
-    body.classList.toggle("_lock");
+    body.classList.add("_lock");
+    burger.classList.add("burger__lock");
 }
 
 //Скрыть модальное окно
 function modalHide() {
     overlay.classList.remove("overlay_opened");
-    body.classList.toggle("_lock");
+    body.classList.remove("_lock");
+    burger.classList.remove("burger__lock");
     modal.forEach(modal => {
         modal.classList.remove("modal_opened");
     });
@@ -200,10 +211,15 @@ modalLocation.addEventListener("click", (event) => {
 const leaveFeedback = document.querySelector(".aside__feedback");
 const modalFeedback = document.querySelector(".modal_feedback");
 const modalForm = document.querySelectorAll(".modal__form");
-const modalInputs = document.querySelectorAll(".modal__input");
+const forms = document.querySelectorAll("form");
+const inputs = document.querySelectorAll("input");
+const textareas = document.querySelectorAll("textarea");
 
 const modalThanks = document.querySelector(".modal_thanks");
 
+/*
+Отправка данных форм на сервер
+*/
 async function postData(url, data) {
     const result = await fetch(url, {
         method: "POST",
@@ -214,8 +230,11 @@ async function postData(url, data) {
 };
 
 function clearInputs() {
-    modalInputs.forEach(input => {
+    inputs.forEach(input => {
         input.value = "";
+    });
+    textareas.forEach(textarea => {
+        textarea.value = "";
     });
 }
 
@@ -226,11 +245,11 @@ if (leaveFeedback) {
 
 }
 
-modalForm.forEach(form => {
+forms.forEach(form => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const formData = new FormData(form);
-        postData("./../server.php", formData)
+        postData("./server.php", formData)
             .then(res => {
                 console.log(res);
                 modalHide();
@@ -243,7 +262,7 @@ modalForm.forEach(form => {
             })
             .finally(() => {
                 clearInputs();
-            })
+            });
     });
 });
 
@@ -251,9 +270,9 @@ modalForm.forEach(form => {
 const logIn = document.getElementById("login");
 const modalLogin = document.querySelector(".modal_login");
 
-logIn.addEventListener("click", () => {
-    modalOpen(modalLogin);
-});
+// logIn.addEventListener("click", () => {
+//     modalOpen(modalLogin);
+// });
 
 //======Корректировка ввода пользователя====
 const phoneInput = document.getElementById("telInput");

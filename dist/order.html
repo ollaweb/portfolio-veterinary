@@ -106,14 +106,18 @@
                     </aside>
                     <div class="content">
                         <section class="appointment">
-                            <form action="#" class="appointment__options order">
-                                <input name="name" type="text" placeholder="ФИО">
+                            <form action="#" class="appointment__options order" enctype="multipart/form-data">
+                                <input name=" name" type="text" placeholder="ФИО" required minlength="3">
                                 <div class="order__col">
-                                    <input name="phone" type="tel" placeholder="+7 (999) 999 99 99">
-                                    <input type="text" placeholder="Желаемая дата и время приема">
+                                    <input id="telInput" name="phone" type="tel" placeholder="+7 (999) 999 99 99"
+                                        pattern="^(\+7)\(\d{3}\)\d{3}-\d{2}-\d{2}" maxlength="16" required>
+                                    <div class="order__time">
+                                        <input name="date" type="date" placeholder="Желаемая дата" required>
+                                        <input name="time" type="time" placeholder="и время приема" required>
+                                    </div>
                                 </div>
-                                <textarea name="message" placeholder="Коротко опишите проблему"></textarea>
-                                <button type="submit" class="button" disabled>ЗАПИСАТЬСЯ</button>
+                                <textarea name="message" placeholder="Коротко опишите проблему" required></textarea>
+                                <button type="submit" class="button">ЗАПИСАТЬСЯ</button>
                             </form>
                         </section>
                     </div>

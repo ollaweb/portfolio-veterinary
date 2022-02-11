@@ -596,6 +596,10 @@ body._lock {
   padding: 0px 0px 0px 235px;
 }
 
+.menu #login {
+  cursor: pointer;
+}
+
 .menu__block {
   display: none;
 }
@@ -1754,6 +1758,15 @@ body._lock {
   margin: 0px 25px 0px 0px;
 }
 
+.order__time {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order__time > *:not(:last-child) {
+  margin: 0px 10px 0px 0px;
+}
+
 .order textarea {
   min-height: 171px;
   resize: none;
@@ -2700,7 +2713,11 @@ body._lock {
     position: absolute;
     top: 33px;
     right: 50px;
-    z-index: 1199;
+    z-index: 1201;
+  }
+
+  .burger__lock {
+    z-index: 1198;
   }
 
   .button {
@@ -3672,6 +3689,14 @@ body._lock {
     -webkit-column-gap: 15px;
     -moz-column-gap: 15px;
     column-gap: 15px;
+  }
+
+  .order__time {
+    display: block;
+  }
+
+  .order__time > *:not(:last-child) {
+    margin: 0px 0px 24px 0px;
   }
 
   .article-item a {

@@ -3,6 +3,7 @@
 //Project path settings
 const srcPath = 'src';
 const buildPath = 'dist';
+// const buildPath = '/MAMP/htdocs/aibolit'
 const path = {
     src: {
         html: [srcPath + '/*.html', "!" + srcPath + '/_*.html'],
