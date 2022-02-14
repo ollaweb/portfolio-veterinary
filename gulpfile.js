@@ -1,6 +1,6 @@
 "use strict"
 
-//Project path settings
+//Папка исходнико в папка назначения
 const srcPath = 'src';
 const buildPath = 'dist';
 // const buildPath = '/MAMP/htdocs/aibolit'
@@ -8,7 +8,7 @@ const path = {
     src: {
         html: [srcPath + '/*.html', "!" + srcPath + '/_*.html'],
         css: srcPath + '/sass/*.scss',
-        js: srcPath + '/js/**/*.js',
+        js: srcPath + '/js/script.js',
         img: srcPath + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: srcPath + '/fonts/**/*.{woff,woff2,ttf}',
         php: srcPath + '/*.php',
@@ -32,11 +32,11 @@ const path = {
     clean: './' + buildPath,
 }
 
-//Use gulp & gulp plugins
+//Подключаем плагины
 const { src, dest, parallel, series, watch } = require('gulp');
 const browserSync = require('browser-sync').create();//upload html in browser
 const plumber = require('gulp-plumber'); //catch errors
-const fileInclude = require('gulp-file-include');//include html files into one
+// const fileInclude = require('gulp-file-include');//include html files into one
 const sass = require('gulp-sass')(require('sass')); //from scss to css
 const autoprefixer = require('gulp-autoprefixer'); //add autoprefixers
 const groupMedia = require('gulp-group-css-media-queries'); //group all media together and at te end of the file
@@ -46,6 +46,7 @@ const babel = require('gulp-babel'); //use new format of js in old browsers
 const concat = require('gulp-concat'); //create all needed js files into 1
 const uglify = require('gulp-uglify-es').default; //js parser
 const del = require('del'); //delete files
+const webpack = require('webpack-stream');
 
 //Init BrowserSync
 function sync() {
@@ -56,16 +57,16 @@ function sync() {
     });
 }
 
-//Build html into /build folder
+//Копируем html в папку назначения
 function html() {
     return src(path.src.html)
         .pipe(plumber())
-        .pipe(fileInclude())
+        // .pipe(fileInclude())
         .pipe(dest(path.build.html))
         .pipe(browserSync.stream())
 }
 
-//Build css from scss
+//Обрабатываем SASS файлы
 function css() {
     return src(path.src.css)
         .pipe(plumber())
@@ -82,20 +83,66 @@ function css() {
         .pipe(browserSync.stream())
 }
 
-//Build js
+//Обрабатываем JS файлы
 function js() {
     return src(path.src.js)
-        .pipe(plumber())
-        // .pipe(babel())
-        .pipe(concat('script.js'))
-        .pipe(dest(path.build.js))
-        .pipe(uglify())
-        .pipe(rename({
-            suffix: ".min",
-            extname: ".js"
+        .pipe(webpack({
+            mode: 'development',
+            output: {
+                filename: 'bundle.js'
+            },
+            watch: false,
+            devtool: "source-map",
+            module: {
+                rules: [
+                    {
+                        test: /\.m?js$/,
+                        exclude: /(node_modules|bower_components)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                            }
+                        }
+                    }
+                ]
+            }
         }))
         .pipe(dest(path.build.js))
         .pipe(browserSync.stream())
+}
+
+//Сборка JS при продакшене
+function js_production() {
+    return src(path.src.js)
+        .pipe(webpack({
+            mode: 'production',
+            output: {
+                filename: 'bundle.js'
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.m?js$/,
+                        exclude: /(node_modules|bower_components)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [['@babel/preset-env', {
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                            }
+                        }
+                    }
+                ]
+            }
+        }))
+        .pipe(dest(path.build.js))
 }
 
 //Build img 
@@ -141,6 +188,7 @@ let taskManager = parallel(build, watchFiles, sync);
 exports.html = html;
 exports.css = css;
 exports.js = js;
+exports.js_production = js_production;
 exports.images = images;
 exports.fonts = fonts;
 exports.php = php;

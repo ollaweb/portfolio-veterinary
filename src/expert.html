@@ -403,42 +403,57 @@
                 </div>
             </div>
         </footer>
-        <div class="overlay">
-            <div class="modal modal_location">
-                <div class="modal__close"></div>
-                <div class="modal__title">Ваш город</div>
-                <div class="modal__city-list">
-                    <div class="modal__city">Волгоград</div>
-                    <div class="modal__city">Грозный</div>
+        <div class="modal-location">
+            <div class="overlay ">
+                <div class="modal modal_location">
+                    <div class="modal__close"></div>
+                    <div class="modal__title">Ваш город</div>
+                    <div class="modal__city-list">
+                        <div class="modal__city">Волгоград</div>
+                        <div class="modal__city">Грозный</div>
+                    </div>
                 </div>
             </div>
-            <div class="modal modal_login">
-                <div class="modal__close"></div>
-                <div class="modal__title">Вход или <br> регистрация</div>
-                <form class="modal__form" action="personal-page.html" enctype="multipart/form-data">
-                    <input class="modal__input" id="telInput" type="tel" name="phone" placeholder="+7(999)999-99-99"
-                        required pattern="^(\+7)\(\d{3}\)\d{3}-\d{2}-\d{2}" maxlength="16">
-                    <button type="submit" class="modal__button button">Далее</button>
-                </form>
-            </div>
-            <div class="modal modal_feedback">
-                <div class="modal__close"></div>
-                <div class="modal__title">Оставить отзыв</div>
-                <form class="modal__form modal__form_feedback" action="#" enctype="multipart/form-data">
-                    <textarea class="modal__input" id="feedbackInput" type="text" name="feedback" placeholder="Отзыв"
-                        required></textarea>
-                    <button type="submit" class="modal__button button">Отправить</button>
-                </form>
-            </div>
-            <div class="modal modal_thanks">
-                <div class="modal__close"></div>
-                <div class="modal__thanks-text">Спасибо! Мы рассмотрим Ваш отзыв
-                    и опубликуем его в ближайшее время</div>
+        </div>
+        <div class="modal-login">
+            <div class="overlay">
+                <div class="modal modal_login">
+                    <div class="modal__close"></div>
+                    <div class="modal__title">Вход или <br> регистрация</div>
+                    <form class="modal__form" action="personal-page.html" enctype="multipart/form-data">
+                        <input id="telInput" type="tel" name="phone" placeholder="+7(999)999-99-99" required
+                            pattern="^(\+7)\(\d{3}\)\d{3}-\d{2}-\d{2}" maxlength="16">
+                        <button type="submit" class="modal__button button">Далее</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <div class="modal-feedback">
+            <div class="overlay">
+                <div class="modal modal_feedback">
+                    <div class="modal__close"></div>
+                    <div class="modal__title">Оставить отзыв</div>
+                    <form class="modal__form modal__form_feedback" action="#" enctype="multipart/form-data">
+                        <textarea class="modal__input" id="feedbackInput" type="text" name="feedback"
+                            placeholder="Отзыв" required></textarea>
+                        <button type="submit" class="modal__button button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-thanks">
+            <div class="overlay">
+                <div class="modal modal_thanks">
+                    <div class="modal__close"></div>
+                    <div class="modal__thanks-text">Спасибо! Мы рассмотрим Ваш отзыв
+                        и опубликуем его в ближайшее время</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/bundle.js"></script>
 </body>
 
 </html>
