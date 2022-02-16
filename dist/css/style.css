@@ -268,7 +268,7 @@ body._lock {
   width: 100%;
   height: 100%;
   background-color: rgba(8, 6, 6, 0.5);
-  z-index: 1199;
+  z-index: 1230;
   transition: all 0.6s ease-out;
 }
 
@@ -597,6 +597,46 @@ body._lock {
 
 .header__city {
   padding: 0px 0px 0px 6px;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1200;
+  background-color: rgba(8, 6, 6, 0.5);
+  transition: all 2s ease-out;
+}
+
+.menu-overlay_opened {
+  display: block;
+  -webkit-animation-name: displayMenuOverflow;
+  animation-name: displayMenuOverflow;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes displayMenuOverflow {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes displayMenuOverflow {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .menu {
@@ -2713,11 +2753,12 @@ body._lock {
     position: absolute;
     top: 33px;
     right: 50px;
-    z-index: 1201;
+    z-index: 1209;
+    transition: all 0.6s ease-out;
   }
 
-  .burger__lock {
-    z-index: 1198;
+  .burger_opened {
+    z-index: 1220;
   }
 
   .button {
@@ -2744,7 +2785,7 @@ body._lock {
     right: -100%;
     width: 60%;
     height: 90px;
-    z-index: 1200;
+    z-index: 1220;
     transition: all 0.6s ease-out;
   }
 
@@ -2765,21 +2806,21 @@ body._lock {
     display: block;
     position: fixed;
     top: 0;
-    left: 100%;
-    width: 100%;
+    right: -100%;
+    width: 60%;
     height: 100vh;
-    z-index: 1200;
+    z-index: 1215;
     transition: all 0.6s ease-out;
   }
 
   .menu.opened-menu {
-    left: 0;
+    right: -1px;
   }
 
   .menu__block {
     margin: 0 0 0 auto;
     display: block;
-    width: 60%;
+    width: 100%;
     height: 90px;
     background-color: #fff;
   }
@@ -2790,7 +2831,7 @@ body._lock {
     padding-bottom: 100px;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
     -ms-flex-align: center;
     align-items: center;
     background-color: #fff;
@@ -3438,19 +3479,18 @@ body._lock {
     top: 10px;
   }
 
+  .menu {
+    width: 80%;
+  }
+
   .menu__block {
     height: 70px;
-    width: 80%;
   }
 
   .menu__items {
     height: calc(100vh - 70px);
     padding-bottom: 10px;
     padding-top: 0;
-  }
-
-  .menu__items {
-    width: 80%;
   }
 
   .menu__item:not(:last-child) {

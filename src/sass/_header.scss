@@ -43,7 +43,7 @@
             right: -100%;
             width: 60%;
             height: 90px;
-            z-index: 1200;
+            z-index: 1220;
             transition: all 0.6s ease-out;
             @media (max-width: 576px) {
                 width: 80%;
@@ -77,7 +77,30 @@
         padding: 0px 0px 0px 6px;
     }
 }
-
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1200;
+    background-color: rgba(8, 6, 6, 0.5);
+    transition: all 2s ease-out;
+    &_opened {
+        display: block;
+        animation-name: displayMenuOverflow;
+        animation-duration: 1s;
+    }
+}
+@keyframes displayMenuOverflow {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .menu {
     flex: 1 1 auto;
     padding: 0px 0px 0px 235px;
@@ -96,29 +119,31 @@
         display: block;
         position: fixed;
         top: 0;
-        left: 100%;
+        right: -100%;
         // left: 0;
-        width: 100%;
+        width: 60%;
         height: 100vh;
         // background-color: rgba(8, 6, 6, 0.5);
-        z-index: 1200;
+        z-index: 1215;
         transition: all 0.6s ease-out;
         &.opened-menu {
-            left: 0;
+            right: -1px;
         }
+    }
+    @media (max-width: 576px) {
+        width: 80%;
     }
     &__block {
         display: none;
         @media (max-width: 992px) {
             margin: 0 0 0 auto;
             display: block;
-            width: 60%;
+            width: 100%;
             height: 90px;
             background-color: #fff;
         }
         @media (max-width: 576px) {
             height: 70px;
-            width: 80%;
         }
         &_bottom {
             position: absolute;
@@ -135,7 +160,7 @@
             padding-top: 10px;
             padding-bottom: 100px;
             flex-direction: column;
-            width: 60%;
+            width: 100%;
             align-items: center;
             background-color: #fff;
             height: calc(100vh - 90px);
@@ -145,9 +170,6 @@
             height: calc(100vh - 70px);
             padding-bottom: 10px;
             padding-top: 0;
-        }
-        @media (max-width: 576px) {
-            width: 80%;
         }
     }
     &__item {

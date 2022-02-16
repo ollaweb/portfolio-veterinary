@@ -6,9 +6,10 @@
         position: absolute;
         top: 33px;
         right: 50px;
-        z-index: 1201;
-        &__lock {
-            z-index: 1198;
+        z-index: 1209;
+        transition: all 0.6s ease-out;
+        &_opened {
+            z-index: 1220;
         }
     }
     @media (max-width: 576px) {

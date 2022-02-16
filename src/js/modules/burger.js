@@ -1,79 +1,63 @@
 'use strict'
-import { spoilerHide } from './spoiler.js';
-
 function burger() {
-    /*
-    Настройка меню бургер (открытие/закрытие при нажатии на бургер;
-    закрытие при переходе по ссылке меню)
-    */
-
-    const body = document.querySelector("body");
     const burger = document.querySelector(".burger");
-    const burgerItems = document.querySelector(".burger__items");
-    const menuItemsLink = document.querySelectorAll(".menu__item");
+    const burgerStrips = document.querySelector(".burger__items");
+
     const menu = document.querySelector(".menu");
+    const menuOverlay = document.querySelector(".menu-overlay");
+    const menuItem = document.querySelectorAll(".menu__item");
+    const spoiler = document.querySelector(".spoiler");
 
-    /*
-    Фукция, которая работает при ширине экрана 992пикселя
-    и меньше. 
-    Открывает/скрывает меню сбоку с подложкой, переводит бургер в крестик
-    и обратно в бургер, блокирует прокрутку body
-    */
-    function burgerSwitch() {
-        if (window.innerWidth <= 992) {
-            overlay.classList.toggle("overlay_opened");
-            menu.classList.toggle("opened-menu");
-            headerLocation.classList.toggle("opened-location");
-            burgerItems.classList.toggle("_opened");
-            body.classList.toggle("_lock");
-        }
-
+    const headerLocation = document.querySelector(".header__location");
+    function openBurgerMenu() {
+        burger.classList.add("burger_opened");
+        burgerStrips.classList.add("_opened");
+        menu.classList.add("opened-menu");
+        document.body.style.overflow = "hidden";
+        menuOverlay.classList.add("menu-overlay_opened");
+        headerLocation.classList.add("opened-location");
     }
-    /*
-    Если меню-бургер закрыто, а спойлер в меню открыт остался, 
-    то закрыть спойлер 
-    */
-    function spoilerHideWithCloseBurger() {
-        if (!burgerItems.classList.contains("_opened") && spoilerWrapper.classList.contains("opened-spoiler")) {
-            spoilerHide();
-        }
+    function closeBurgerMenu() {
+        burger.classList.remove("burger_opened");
+        burgerStrips.classList.remove("_opened");
+        menu.classList.remove("opened-menu");
+        document.body.style.overflow = "";
+        menuOverlay.classList.remove("menu-overlay_opened");
+        headerLocation.classList.remove("opened-location");
     }
-    /* 
-    Если ширина экрана менее или равна 992пикселя
-    и куда нажали - это подложка выезжающего меню,
-    то закрыть бургер, убрать спойлер, если открыт, разблокировать body
-    */
-    menu.addEventListener("click", (event) => {
-        if (window.innerWidth <= 992 && event.target == menu) {
-            burgerSwitch();
-            spoilerHideWithCloseBurger();
-        }
-    });
-    burger.addEventListener("click", () => {
-        burgerSwitch();
-        spoilerHideWithCloseBurger();
-    });
-    /*Когда нажали на пункт меню из бургера, 
-то идет переход по ссылке, а меню-бургер закрывается
-*/
-    menuItemsLink.forEach(item => {
-        const link = item.querySelector("a");
-        if (link) {
-            link.addEventListener("click", (e) => {
-                e.stopPropagation();
-                burgerSwitch();
-                spoilerHideWithCloseBurger();
+    function closeByClickOnOverlay() {
+        menuOverlay.addEventListener("click", (event) => {
+            event.stopPropagation();
+            if (event.target === menuOverlay) {
+                closeBurgerMenu();
+            }
+        });
+    }
+    function closeByClickOnMenuItem() {
+        menu.addEventListener("click", (event) => {
+            event.stopPropagation();
+            menuItem.forEach(item => {
+                if (event.target === item && item !== spoiler) {
+                    closeBurgerMenu();
+                }
             });
-        } else {
-            item.addEventListener("click", () => {
 
-                burgerSwitch();
-                spoilerHideWithCloseBurger();
-                modalOpen(modalLogin);
-            });
-        }
+        });
+    }
 
-    });
+    function clickOnBurger() {
+        burger.addEventListener("click", (event) => {
+            event.stopPropagation();
+            if (!burgerStrips.classList.contains("_opened")) {
+                openBurgerMenu();
+                closeByClickOnOverlay();
+                closeByClickOnMenuItem();
+            } else {
+                closeBurgerMenu();
+            }
+        });
+    }
+    clickOnBurger();
 }
 
 export default burger;
