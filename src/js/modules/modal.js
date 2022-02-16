@@ -41,5 +41,37 @@ function modal() {
     applyModalWindowToButton(".aside__feedback", ".modal-feedback");
     applyModalWindowToButton(".modal__button_feedback", ".modal-thanks");
 
+    function setCity() {
+        const headerCity = document.querySelector(".header__city");
+        const cityList = document.querySelector(".modal__city-list");
+        const cities = document.querySelectorAll(".modal__city");
+        const contactsSection = document.querySelector(".contacts__wrapper");
+        cityList.addEventListener("click", (event) => {
+            cities.forEach((city, cityIndex) => {
+                if (city.textContent === event.target.textContent) {
+                    if (city.textContent !== headerCity.textContent) {
+                        console.log(`City index is ${cityIndex}`);
+                        headerCity.textContent = city.textContent;
+                        if (contactsSection) {
+                            const cityBlocks = document.querySelectorAll(".contacts__block");
+                            cityBlocks.forEach((block, blockIndex) => {
+                                if (blockIndex !== cityIndex) {
+                                    block.classList.remove("opened-city");
+                                } else {
+                                    block.classList.add("opened-city");
+                                }
+                            });
+                        }
+                    }
+
+                }
+            });
+
+
+
+        });
+
+    }
+    setCity();
 }
 export default modal;

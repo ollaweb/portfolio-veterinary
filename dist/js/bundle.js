@@ -61,6 +61,36 @@ function modal() {
   applyModalWindowToButton("#login", ".modal-login");
   applyModalWindowToButton(".aside__feedback", ".modal-feedback");
   applyModalWindowToButton(".modal__button_feedback", ".modal-thanks");
+
+  function setCity() {
+    var headerCity = document.querySelector(".header__city");
+    var cityList = document.querySelector(".modal__city-list");
+    var cities = document.querySelectorAll(".modal__city");
+    var contactsSection = document.querySelector(".contacts__wrapper");
+    cityList.addEventListener("click", function (event) {
+      cities.forEach(function (city, cityIndex) {
+        if (city.textContent === event.target.textContent) {
+          if (city.textContent !== headerCity.textContent) {
+            console.log("City index is ".concat(cityIndex));
+            headerCity.textContent = city.textContent;
+
+            if (contactsSection) {
+              var cityBlocks = document.querySelectorAll(".contacts__block");
+              cityBlocks.forEach(function (block, blockIndex) {
+                if (blockIndex !== cityIndex) {
+                  block.classList.remove("opened-city");
+                } else {
+                  block.classList.add("opened-city");
+                }
+              });
+            }
+          }
+        }
+      });
+    });
+  }
+
+  setCity();
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (modal);

@@ -1170,8 +1170,7 @@ body._lock {
 
 .contacts__block {
   margin: 70px 0px 0px 0px;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-pack: justify;
   justify-content: space-between;
   overflow: hidden;
@@ -1185,14 +1184,6 @@ body._lock {
   flex-direction: column;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.contacts__volgograd {
-  display: none;
-}
-
-.contacts__grozny {
-  display: none;
 }
 
 .contacts_only {
