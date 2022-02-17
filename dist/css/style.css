@@ -741,7 +741,7 @@ body._lock {
   background: #ffffff;
   box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);
   border-radius: 20px;
-  z-index: 1099;
+  z-index: 1210;
 }
 
 .spoiler__wrapper > *:not(:last-child) {
@@ -769,6 +769,16 @@ body._lock {
 .opened-spoiler {
   display: -ms-flexbox;
   display: flex;
+}
+
+.spoiler-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1200;
 }
 
 .promo {

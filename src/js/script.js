@@ -1,5 +1,5 @@
 
-// import spoiler from './modules/spoiler';
+import spoiler from './modules/spoiler';
 import burger from './modules/burger';
 import modal from './modules/modal';
 // import postData from './services/postData';
@@ -9,7 +9,7 @@ import slickSlider from './modules/slickSlider';
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    // spoiler();
+    spoiler();
     burger();
     modal();
     // postData();

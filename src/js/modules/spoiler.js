@@ -1,34 +1,25 @@
 'use strict'
-// ============== Header открытие спойлера ===============
-//Закрыьть блок спойлера
-function spoilerHide() {
-    spoilerWrapper.classList.remove(spoilerOpenedClass);
-}
-
 function spoiler() {
-    function useSpoiler(spoiler, spoilerWrapper, spoilerItem, spoilerOpenedClass) {
-        //Переключение открыто/закрыто спойлера
-        function spoilerToggle() {
-            spoilerWrapper.classList.toggle(spoilerOpenedClass);
-        }
-        spoiler.addEventListener("click", () => {
-            spoilerToggle();
+    function useSpoiler(btnSpoiler, wrapperSpoiler, overlaySpoiler) {
+        const spoilerButton = document.querySelector(btnSpoiler);
+        const spoilerWrapper = document.querySelector(wrapperSpoiler);
+        // const spoilerOverlay = document.querySelector(overlaySpoiler);
+        spoilerButton.addEventListener("click", () => {
+            if (!spoilerWrapper.classList.contains("opened-spoiler")) {
+                spoilerWrapper.classList.add("opened-spoiler");
+                document.body.style.overflow = "hidden";
+                // spoilerOverlay.style.display = "block";
+            } else {
+                spoilerWrapper.classList.remove("opened-spoiler");
+                document.body.style.overflow = "";
+                // spoilerOverlay.style.display = "";
+            }
         });
-        //Нажатие на пункт меню из блока спойлера закроет блок спойлера
-        spoilerWrapper.addEventListener("click", (event) => {
-            spoilerItem.forEach(element => {
-                if (event.target == element) {
-                    spoilerHide();
-                }
-            });
-        });
+
+
     }
-    const spoilerAbout = document.querySelector(".spoiler");
-    const spoilerAboutWrapper = document.querySelector(".spoiler__wrapper");
-    const spoilerAboutItem = document.querySelectorAll(".spoiler__item a");
-    const spoilerClass = "opened-spoiler";
-    useSpoiler(spoilerAbout, spoilerAboutWrapper, spoilerAboutItem, spoilerClass);
+
+    useSpoiler(".spoiler", ".spoiler__wrapper", ".spoiler-overlay");
 }
 
 export default spoiler;
-export { spoilerHide };
