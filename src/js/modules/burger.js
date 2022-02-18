@@ -5,7 +5,7 @@ function burger() {
 
     const menu = document.querySelector(".menu");
     const menuOverlay = document.querySelector(".menu-overlay");
-    const menuItem = document.querySelectorAll(".menu__item");
+    const menuItem = document.querySelectorAll(".menu__item a");
     const spoiler = document.querySelector(".spoiler");
 
     const headerLocation = document.querySelector(".header__location");
@@ -37,7 +37,7 @@ function burger() {
         menu.addEventListener("click", (event) => {
             event.stopPropagation();
             menuItem.forEach(item => {
-                if (event.target === item && item !== spoiler) {
+                if ((event.target === item) && (event.target !== spoiler)) {
                     closeBurgerMenu();
                 }
             });
