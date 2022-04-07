@@ -1,17 +1,18 @@
 .footer {
-    padding: 80px 0px 60px 0px;
+    padding: 50px 0px;
     color: #ffffff;
     background-color: $color-main;
-    @media (max-width: 768px) {
-        padding: 50px 0px;
+    @media (min-width: 768px) {
+        padding: 80px 0px 60px 0px;
     }
     &__wrapper {
         max-width: 1456px;
         margin: 0 auto;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        @media (max-width: 1200px) {
-            flex-direction: column;
+        @media (min-width: 1200px) {
+            flex-direction: row;
         }
     }
 
@@ -49,15 +50,17 @@
     }
     &__logo {
         cursor: pointer;
-        @media (max-width: 768px) {
-            margin: 0px 15px 0px 0px;
-            & svg {
-                width: 75px;
-                height: 75px;
-            }
+        margin: 0px 15px 0px 0px;
+        & svg {
+            width: 75px;
+            height: 75px;
         }
-        @media (max-width: 576px) {
-            margin: 0;
+        @media (min-width: 768px) {
+            
+            & svg {
+                width: 90px;
+                height: 90px;
+            }
         }
     }
     &__names {
@@ -65,42 +68,39 @@
     }
     &__name {
         font-family: "STIX Two Text", serif;
-        font-size: 50px;
+        font-size: 36px;
         font-weight: 600;
         line-height: 124%;
-        @media (max-width: 768px) {
-            font-size: 36px;
+        @media (min-width: 768px) {
+            font-size: 50px;
         }
     }
     &__descr {
-        margin: -10px 0px 0px 0px;
-        font-size: 16.5px;
+        margin: -7px 0px 0px 0px;
+            font-size: 14px;
         font-weight: 500;
         line-height: 121%;
-        @media (max-width: 768px) {
-            margin: -7px 0px 0px 0px;
-            font-size: 14px;
+        @media (min-width: 768px) {
+            margin: -10px 0px 0px 0px;
+            font-size: 16.5px;
         }
     }
     &__links {
-        margin: 0px 0px 0px 112px;
         display: flex;
         flex-wrap: wrap;
-        @media (max-width: 576px) {
-            margin: 0;
+        @media (min-width: 576px) {
+            margin: 0px 0px 0px 112px;
         }
     }
     &__column {
         margin: 29px 0px 0px 0px;
-        // flex: 1 1 33.333333%;
         display: flex;
         flex-direction: column;
-
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 187%;
-        @media (max-width: 768px) {
-            font-size: 14px;
+        @media (min-width: 768px) {
+            font-size: 16px;
         }
 
         &:first-child {
@@ -109,12 +109,13 @@
 
         &:not(:last-child) {
             margin: 29px 100px 0px 0px;
-            @media (max-width: 1300px) {
+            @media (min-width: 1200px) {
                 margin: 29px 60px 0px 0px;
             }
-            @media (max-width: 1200px) {
+            @media (min-width: 1300px) {
                 margin: 29px 100px 0px 0px;
             }
+            
         }
         & a {
             &:hover {
@@ -125,12 +126,10 @@
 }
 
 .footer-contacts {
-    @media (max-width: 1200px) {
-        margin: 40px 0px 0px 112px;
-    }
-    @media (max-width: 576px) {
         margin: 40px 0px 0px 0px;
-    }
+        @media (min-width: 576px) {
+            margin: 40px 0px 0px 112px;
+        }
 
     & > * {
         &:not(:last-child) {
@@ -138,6 +137,10 @@
         }
     }
     &__block {
+        width: 300px;
+        @media (min-width: 1200px) {
+            width: auto;
+        }
         & > * {
             &:not(:last-child) {
                 margin: 0px 0px 30px 0px;
@@ -145,8 +148,9 @@
         }
     }
     &__item {
-        @media (max-width: 576px) {
-            width: 260px;
+        width: 260px;
+        @media (min-width: 576px) {
+            width: 100%;
         }
     }
     &__email {
@@ -160,5 +164,43 @@
                 color: $color-accent;
             }
         }
+    }
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    
+    &__item {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: #fff;
+        & img {
+            position: relative;
+            z-index: 10;
+        }
+        & a {
+            padding: 6px;
+            display: inline-block;
+        }
+        &_whatup {
+            & a {
+                padding: 8px;
+            }
+        }
+        &_telegram {
+            & a {
+                padding-top: 12px;
+                padding-left: 8px;
+            }
+        }
+        &_vk {
+            & a {
+                padding-top: 7px;
+            }
+        }
+        
     }
 }

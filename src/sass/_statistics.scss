@@ -1,82 +1,80 @@
 .statistics {
-    padding: 317px 0px 323px 0px;
-    @media (max-width: 1200px) {
-        padding: 220px 0px 270px;
-    }
-    @media (max-width: 992px) {
-        padding: 150px 0px 200px;
-    }
-    @media (max-width: 768px) {
-        padding: 100px 0px 150px;
-    }
+    position: relative;
+        padding: 100px 0px 75px;
+        @media (min-width: 400px) {
+            padding: 100px 0px 150px;
+        }
+        @media (min-width: 768px) {
+            padding: 150px 0px 200px;
+        }
+        @media (min-width: 992px) {
+            padding: 220px 0px 270px;
+        }
+        @media (min-width: 1200px) {
+            padding: 317px 0px 323px 0px;
+        }
     &__value {
         margin: 0 auto;
-        padding: 0px 0px 0px 77px;
+        padding: 0px 30px;
         text-align: left;
         max-width: 950px;
         font-family: "STIX Two Text", serif;
-        font-size: 144px;
+        font-size: 54px;
         font-weight: 600;
         line-height: 76%;
         color: $color-main;
-        @media (max-width: 1200px) {
-            font-size: 125px;
-        }
-        @media (max-width: 992px) {
+        @media (min-width: 576px) {
             padding: 0px 77px;
+        }
+        @media (min-width: 768px) {
             font-size: 68px;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 992px) {
+            font-size: 125px;
         }
-        @media (max-width: 576px) {
-            padding: 0px 30px;
-            font-size: 54px;
+        @media (min-width: 1200px) {
+            padding: 0px 0px 0px 77px;
+            font-size: 144px;
         }
     }
     &__descr {
         position: relative;
-        padding: 0px 0px 0px 77px;
+        padding: 0px 30px;
         margin: 0 auto;
         max-width: 950px;
-        font-size: 80px;
+        font-size: 28px;
         font-weight: 500;
         line-height: 137%;
         color: $color-text;
-        @media (max-width: 1200px) {
-            font-size: 72px;
-        }
-        @media (max-width: 992px) {
+        @media (min-width: 576px) {
             padding: 0px 77px;
-            font-size: 48px;
-        }
-        @media (max-width: 768px) {
             font-size: 36px;
         }
-        @media (max-width: 576px) {
-            padding: 0px 30px;
-            font-size: 28px;
+        @media (min-width: 768px) {
+            
+            font-size: 48px;
+        }
+        @media (min-width: 992px) {
+            font-size: 72px;
+        }
+        @media (min-width: 1200px) {
+            padding: 0px 0px 0px 77px;
+            font-size: 80px;
         }
     }
     &__img {
         position: absolute;
-        top: 154px;
-        left: 462px;
-        @media (max-width: 1200px) {
-            top: 140px;
-            left: 400px;
+        top: 64%;
+        left: 44%;
+        @media (min-width: 400px) {
+            top: 50%;
         }
-        @media (max-width: 992px) {
-            top: 55px;
-            left: 380px;
+        @media (min-width: 992px) {
+            top: 58%;
         }
-        @media (max-width: 768px) {
-            left: 270px;
-            height: 180px;
-        }
-        @media (max-width: 576px) {
-            top: 60px;
-            left: 156px;
-            height: 140px;
+        @media (min-width: 1200px) {
+            top: 60%;
+            left: 49.5%;
         }
         & img {
             width: 100%;

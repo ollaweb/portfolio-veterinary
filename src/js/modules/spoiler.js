@@ -25,13 +25,15 @@ function spoiler() {
         });
 
         spoilerWrapper.addEventListener("click", (event) => {
+            if (event.target !== spoilerWpapper) {
+                spoilerWrapper.classList.remove("opened-spoiler");
+                spoilerButton.classList.remove("active");
+            }
             spoilerItems.forEach(item => {
                 if (event.target === item) {
                     spoilerWrapper.classList.remove("opened-spoiler");
                     spoilerButton.classList.remove("active");
-
                 }
-
             });
         });
 
