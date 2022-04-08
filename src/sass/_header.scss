@@ -338,9 +338,6 @@
 .opened-spoiler {
     display: flex;
     padding-top: 15px;
-    @media (min-width: 992px) {
-        padding-top: 0;
-    }
 }
 .spoiler-overlay {
     display: none;

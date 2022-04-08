@@ -34,31 +34,31 @@
     box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);
     border-radius: 20px;
     &_location {
-        width: 400px;
-        @media (max-width: 576px) {
-            width: 70%;
+        width: 70%;
+        @media (min-width: 576px) {
+            width: 400px;
         }
     }
     &_login {
         width: 270px;
     }
     &_feedback {
-        width: 600px;
-        @media (max-width: 768px) {
-            width: 70%;
+        width: 70%;
+        @media (min-width: 768px) {
+            width: 600px;
         }
     }
     &_thanks {
-        width: 500px;
-        @media (max-width: 768px) {
-            width: 70%;
+        width: 70%;
+        @media (min-width: 768px) {
+            width: 500px;
         }
     }
     & input {
         padding: 16px;
         margin-bottom: 32px;
         width: 100%;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 125%;
         color: $color-main;
@@ -66,8 +66,8 @@
         border: 1px solid #ede9e8;
         box-sizing: border-box;
         border-radius: 20px;
-        @media (max-width: 576px) {
-            font-size: 16px;
+        @media (min-width: 576px) {
+            font-size: 20px;
         }
     }
     &__close {
@@ -79,7 +79,6 @@
         margin-bottom: 10px;
         position: relative;
         cursor: pointer;
-
         &::before {
             content: "";
             position: absolute;
@@ -112,13 +111,13 @@
     &__title {
         margin-bottom: 40px;
         font-family: "STIX Two Text", serif;
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 400;
         line-height: 133%;
         color: $color-text;
         text-align: center;
-        @media (max-width: 576px) {
-            font-size: 24px;
+        @media (min-width: 576px) {
+            font-size: 30px;
         }
     }
     &__city-list {
@@ -156,15 +155,14 @@
         margin: 0 auto;
     }
     &__thanks-text {
-        padding: 50px;
         font-weight: 500;
-        font-size: 16.5px;
+        font-size: 14px;
         line-height: 150%;
         text-align: center;
         color: $color-text;
-        @media (max-width: 576px) {
-            padding: 0;
-            font-size: 14px;
+        @media (min-width: 576px) {
+            padding: 50px;
+            font-size: 16.5px;
         }
     }
 }
