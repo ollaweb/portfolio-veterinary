@@ -13,39 +13,36 @@
                 <a href="index.html" class="main__button  more-button more-button_back">
                     НАЗАД
                 </a>
-                <div class="main__wrapper">
+                <section class="main__wrapper">
                     <aside class="aside">
                         <div class="aside__wrapper">
-                            <h2 class="aside__title">
+                            <h1 class="aside__title">
                                 Запись на прием
-                            </h2>
+                            </h1>
                         </div>
 
                     </aside>
                     <div class="content">
-                        <section class="appointment">
+                        <div class="appointment">
                             <div class="appointment__options order-options">
                                 <a href="order.html" class="appointment-options__item">
-                                    <div class="appointment-options__descr">Онлайн-консультация</div>
-                                    <div class="appointment-options__price">2000 ₽</div>
+                                    <span class="appointment-options__descr">Онлайн-консультация</span>
+                                    <span class="appointment-options__price">2000 ₽</span>
                                 </a>
                                 <a href="order.html" class="appointment-options__item">
-                                    <div class="appointment-options__descr">Прием в клинике</div>
-                                    <div class="appointment-options__price">Бесплатно</div>
+                                    <span class="appointment-options__descr">Прием в клинике</span>
+                                    <span class="appointment-options__price">Бесплатно</span>
                                 </a>
                             </div>
-                        </section>
+                        </div>
                     </div>
-                </div>
-
-
+                </section>
             </div>
         </main>
         @@include("./html/footer.html",{})
         @@include("./html/modal-location.html", {})
         @@include("./html/modal-login.html", {})
     </div>
-
     <script src="./js/bundle.js"></script>
 </body>
 

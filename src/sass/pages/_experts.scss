@@ -1,13 +1,12 @@
 .experts {
     &__wrapper {
         display: grid;
-        grid-template-columns: repeat(2, minmax(400px, auto));
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-auto-rows: auto;
         gap: 25px;
-
-        @media (max-width: 1600px) {
-            grid-template-columns: 1fr;
+        @media (min-width: 1600px) {
+            grid-template-columns: repeat(2, minmax(400px, auto));
         }
     }
 }
@@ -16,33 +15,35 @@
     &__item {
         padding: 30px;
         display: flex;
+        flex-direction: column;
         background: #ffffff;
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
         border-radius: 20px;
         border: 1px solid transparent;
-        @media (max-width: 576px) {
-            flex-direction: column;
+        @media (min-width: 576px) {
+            flex-direction: row;
         }
         &:hover {
             border: 1px solid $color-main;
         }
     }
     &__photo {
-        margin-right: 20px;
-        @media (max-width: 576px) {
+        margin-bottom: 20px;
+        @media (min-width: 576px) {
             margin: 0;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
     }
     &__image {
         margin: 0 auto;
-        margin-bottom: 20px;
-        width: 130px;
-        @media (max-width: 1650px) {
+        margin-bottom: 10px;
+        width: 100px;
+        @media (min-width: 992px) {
             width: 100px;
+            margin-bottom: 20px;
         }
-        @media (max-width: 992px) {
-            margin-bottom: 10px;
+        @media (min-width: 1650px) {
+            width: 130px;
         }
         & img {
             width: 100%;
@@ -52,13 +53,13 @@
         }
     }
     &__experience {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 900;
         line-height: 133%;
         color: $color-accent;
         text-align: center;
-        @media (max-width: 992px) {
-            font-size: 14px;
+        @media (min-width: 992px) {
+            font-size: 15px;
         }
     }
     &__info {
@@ -70,21 +71,21 @@
     }
     &__paragraph {
         margin-bottom: 10px;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 100%;
         color: $color-light;
-        @media (max-width: 992px) {
-            font-size: 14px;
+        @media (min-width: 992px) {
+            font-size: 15px;
         }
     }
     &__text {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 125%;
         color: $color-text;
-        @media (max-width: 992px) {
-            font-size: 16px;
+        @media (min-width: 992px) {
+            font-size: 20px;
         }
     }
 }
@@ -99,16 +100,14 @@
     position: relative;
     & .slick-list {
         position: relative;
-        margin: 0 45px;
-        @media (max-width: 992px) {
-            margin: 0 auto;
-        }
-        @media (max-width: 768px) {
+        margin: 0 auto;
+        width: 100%;
+        @media (min-width: 500px) {
             width: 70%;
         }
-
-        @media (max-width: 500px) {
+        @media (min-width: 992px) {
             width: 100%;
+            margin: 0 45px;
         }
     }
     &__item {
@@ -133,11 +132,10 @@
         margin-bottom: 0 !important;
     }
     &__pages {
-        margin-top: -57px;
-        margin-bottom: 33px;
-        @media (max-width: 768px) {
-            margin: 0;
-            margin-bottom: 45px;
+        margin-bottom: 45px;
+        @media (min-width: 768px) {
+            margin-top: -57px;
+            margin-bottom: 33px;
         }
     }
     &__wrapper {
@@ -150,34 +148,31 @@
 }
 
 .feedback-block {
-    padding: 30px;
-    // display: flex;
+    padding: 20px;
     display: grid;
-    grid-template-columns: 130px auto;
+    grid-template-columns: 80px auto;
     grid-template-rows: repeat(2, auto);
-    column-gap: 30px;
+    column-gap: 10px;
     row-gap: 20px;
     background: #ffffff;
     border: 1px solid #ede9e8;
     box-sizing: border-box;
     border-radius: 20px;
-    @media (max-width: 992px) {
-        padding: 20px;
-        grid-template-columns: 80px auto;
-        column-gap: 10px;
+    @media (min-width: 992px) {
+        padding: 30px;
+        grid-template-columns: 130px auto;
+        column-gap: 30px;
     }
     &__img {
-        // flex: 1 0 auto;
-        // margin-right: 30px;
-        grid-row: 1/3;
-        width: 130px;
-        height: 130px;
-        @media (max-width: 992px) {
-            width: 80px;
-            height: 80px;
+        grid-row: 1/1;
+        width: 80px;
+        height: 80px;
+        @media (min-width: 576px) {
+            grid-row: 1/3;
         }
-        @media (max-width: 576px) {
-            grid-row: 1/1;
+        @media (min-width: 992px) {
+            width: 130px;
+            height: 130px;
         }
         & img {
             width: 100%;
@@ -188,53 +183,49 @@
     }
     &__light {
         margin-bottom: 10px;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 100%;
         color: $color-light;
-        @media (max-width: 992px) {
-            font-size: 14px;
+        @media (min-width: 992px) {
+            font-size: 15px;
         }
     }
-    // &__descr {
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 20px;
-    // }
     &__header {
         display: flex;
         justify-content: space-between;
     }
     &__name {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 125%;
         color: $color-text;
-        @media (max-width: 992px) {
-            font-size: 16px;
+        @media (min-width: 992px) {
+            font-size: 20px;
         }
     }
     &__number {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 125%;
         color: $color-main;
-        @media (max-width: 992px) {
-            font-size: 14px;
+        @media (min-width: 992px) {
+            font-size: 16px;
         }
     }
     &__body {
-        @media (max-width: 576px) {
-            grid-column: 1/3;
+        grid-column: 1/3;
+        @media (min-width: 576px) {
+            grid-column: 2/3;
         }
     }
     &__text {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 150%;
         color: $color-main;
-        @media (max-width: 992px) {
-            font-size: 16px;
+        @media (min-width: 992px) {
+            font-size: 20px;
         }
     }
 }

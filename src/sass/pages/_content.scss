@@ -1,85 +1,68 @@
 .content {
-    padding: 10px 0px 100px 0px;
-    width: 60%;
+    padding: 10px 0px 70px 0px;
+    width: 100%;
     min-height: 500px;
-    @media (max-width: 768px) {
-        padding: 10px 0px 70px 0px;
-        width: 100%;
+    @media (min-width: 768px) {
+        padding: 10px 0px 100px 0px;
+        width: 60%;
     }
     &__pages {
-        margin-top: -67px;
-        margin-bottom: 33px;
-        @media (max-width: 768px) {
-            margin: 0;
-            margin-bottom: 45px;
+        margin-bottom: 45px;
+        @media (min-width: 768px) {
+            margin-bottom: 33px;
+            margin-top: -67px;
         }
     }
 }
 
 .content-container {
-    padding-right: 150px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 150%;
     color: $color-main;
-    @media (max-width: 1800px) {
-        padding: 0;
-    }
-    @media (max-width: 992px) {
+    @media (min-width: 576px) {
         font-size: 18px;
     }
-    @media (max-width: 576px) {
-        font-size: 15px;
+    @media (min-width: 992px) {
+        font-size: 20px;
     }
-
+    @media (min-width: 1800px) {
+        padding-right: 150px;
+    }
     & > * {
         &:not(:last-child) {
-            margin-bottom: 30px;
-            @media (max-width: 576px) {
-                margin-bottom: 20px;
+            margin-bottom: 20px;
+            @media (min-width: 576px) {
+                margin-bottom: 30px;
             }
         }
     }
-    // & p,
-    // ul,
-    // li {
-    // font-size: 20px;
-    // font-weight: 500;
-    // line-height: 150%;
-    // color: $color-main;
-    // @media (max-width: 992px) {
-    //     font-size: 18px;
-    // }
-    // @media (max-width: 576px) {
-    //     font-size: 15px;
-    // }
-    // }
 }
 
 .content-title {
     font-family: "STIX Two Text", serif;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 400;
     line-height: 133%;
     color: $color-text;
-    @media (max-width: 992px) {
+    @media (min-width: 576px) {
         font-size: 26px;
     }
-    @media (max-width: 576px) {
-        font-size: 22px;
+    @media (min-width: 992px) {
+        font-size: 30px;
     }
 }
 
 .content-subtitle {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 150%;
     color: $color-light;
-    @media (max-width: 992px) {
+    @media (min-width: 576px) {
         font-size: 18px;
     }
-    @media (max-width: 576px) {
-        font-size: 16px;
+    @media (min-width: 992px) {
+        font-size: 20px;
     }
 }
 
@@ -92,24 +75,20 @@
 }
 
 .content-slider {
+    margin: 0 auto;
     position: relative;
+    width: 100%;
     & .slick-list {
         position: relative;
-        margin: 0 45px;
-        @media (max-width: 992px) {
-            margin: 0 auto;
-        }
-        @media (max-width: 768px) {
+        @media (min-width: 500px) {
             width: 70%;
         }
-
-        @media (max-width: 500px) {
-            width: 100%;
+        @media (min-width: 992px) {
+            margin: 0 45px;
         }
     }
     .slick-track {
         display: flex;
-        // column-gap: 22px;
         justify-content: center;
         align-items: center;
     }
@@ -131,18 +110,21 @@
     }
     &__wrapper {
         display: flex;
-        @media (max-width: 576px) {
-            flex-direction: column;
+        flex-direction: column;
             align-items: center;
+        @media (min-width: 576px) {
+            flex-direction: row;
+            align-items: flex-start;
         }
     }
     &__img {
-        width: 50px;
-        height: 50px;
-        @media (max-width: 576px) {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        @media (min-width: 576px) {
+            margin-bottom: 0;
+            width: 50px;
+            height: 50px;
         }
         & img {
             width: 100%;
@@ -157,22 +139,22 @@
         flex-direction: column;
     }
     &__name {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
         line-height: 95%;
         color: $color-text;
         margin: 0px 0px 10px 0px;
-        @media (max-width: 576px) {
-            font-size: 18px;
+        @media (min-width: 576px) {
+            font-size: 20px;
         }
     }
     &__date {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 139%;
         color: $color-light;
-        @media (max-width: 576px) {
-            font-size: 16px;
+        @media (min-width: 576px) {
+            font-size: 18px;
         }
     }
 }
@@ -186,12 +168,12 @@
     &_flex {
         display: flex;
         width: 100%;
-        column-gap: 50px;
-        @media (max-width: 1200px) {
+        column-gap: 15px;
+        @media (min-width: 576px) {
             column-gap: 30px;
         }
-        @media (max-width: 576px) {
-            column-gap: 15px;
+        @media (min-width: 1200px) {
+            column-gap: 50px;
         }
     }
 }
@@ -206,15 +188,15 @@
         justify-content: space-between;
         align-items: center;
 
-        font-size: 16.5px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 121%;
         color: $color-text;
 
         border-radius: 15px;
         background-color: rgba(255, 254, 254, 0.3);
-        @media (max-width: 992px) {
-            font-size: 14px;
+        @media (min-width: 992px) {
+            font-size: 16.5px;
         }
         &:nth-child(odd) {
             background-color: rgba(237, 233, 232, 0.3);

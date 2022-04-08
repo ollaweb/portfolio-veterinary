@@ -1,28 +1,23 @@
 .aside {
     flex: 1 1 auto;
-    padding-left: 150px;
-    padding-bottom: 50px;
-    @media (max-width: 1800px) {
-        padding: 0px 50px;
-        padding-bottom: 50px;
+    @media (min-width: 768px) {
+        padding: 0 0 50px 0;
     }
-    @media (max-width: 1400px) {
-        padding: 0px;
-        padding-bottom: 50px;
+    @media (min-width: 1400px) {
+        padding: 0 50px 50px 50px;
     }
-    @media (max-width: 768px) {
-        padding: 0;
+    @media (min-width: 1800px) {
+        padding: 0 0px 50px 150px;
     }
-
     &__wrapper {
-        // position: fixed;
-        width: 400px;
-        @media (max-width: 1200px) {
+        margin: 0px 0px 30px 0px;
+            width: 100%;
+        @media (min-width: 768px) {
+            margin: 0;
             width: 300px;
         }
-        @media (max-width: 768px) {
-            margin: 0px 0px 30px 0px;
-            width: 100%;
+        @media (min-width: 1200px) {
+            width: 400px;
         }
         &_articles {
             width: 300px;
@@ -30,47 +25,46 @@
     }
     &__title {
         font-family: "STIX Two Text", serif;
-        font-size: 80px;
+        font-size: 28px;
         font-weight: 400;
         line-height: 137%;
-
-        @media (max-width: 1700px) {
-            font-size: 62px;
-        }
-        @media (max-width: 1200px) {
-            font-size: 50px;
-        }
-        @media (max-width: 768px) {
+        @media (min-width: 576px) {
             font-size: 36px;
         }
-        @media (max-width: 576px) {
-            font-size: 28px;
+        @media (min-width: 768px) {
+            font-size: 50px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 62px;
+        }
+        @media (min-width: 1700px) {
+            font-size: 80px;
         }
     }
     &__menu {
-        margin: 100px 0px 0px 0px;
-        font-size: 19px;
+        margin: 20px 0px 0px 0px;
+        font-size: 14px;
         font-weight: 900;
         line-height: 158%;
         color: $color-light;
         text-transform: uppercase;
-        @media (max-width: 1400px) {
-            margin: 70px 0px 0px 0px;
-        }
-        @media (max-width: 1200px) {
+        @media (min-width: 768px) {
             margin: 50px 0px 0px 0px;
             font-size: 16px;
         }
-        @media (max-width: 768px) {
-            margin: 20px 0px 0px 0px;
-            font-size: 14px;
+        @media (min-width: 1200px) {
+            margin: 70px 0px 0px 0px;
+        }
+        @media (min-width: 1400px) {
+            margin: 100px 0px 0px 0px;
+            font-size: 19px;
         }
         & > * {
             width: 100%;
             &:not(:last-child) {
-                margin: 0px 0px 30px 0px;
-                @media (max-width: 1200px) {
-                    margin: 0px 0px 20px 0px;
+                margin: 0px 0px 20px 0px;
+                @media (min-width: 1200px) {
+                    margin: 0px 0px 30px 0px;
                 }
             }
         }
@@ -81,54 +75,60 @@
         }
     }
     &__expert {
-        width: 333px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media (max-width: 992px) {
+        @media (min-width: 576px) {
+            flex-direction: row;
+        }
+        @media (min-width: 768px) {
+            flex-direction: column;
             width: 250px;
         }
-        @media (max-width: 768px) {
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        @media (max-width: 576px) {
-            flex-direction: column;
+        @media (min-width: 992px) {
+            width: 333px;
         }
     }
     &__info {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (min-width: 576px) {
+            align-items: flex-start;
+            margin-left: 50px;
+        }
+        @media (min-width: 768px) {
+            margin: 0;
+            align-items: center;
+        }
         & a {
             display: block;
         }
         & > * {
             &:not(:last-child) {
-                margin-bottom: 30px;
-                @media (max-width: 576px) {
-                    margin-bottom: 20px;
+                margin-bottom: 20px;
+                @media (min-width: 576px) {
+                    margin-bottom: 30px;
                 }
             }
         }
     }
     &__img {
-        width: 333px;
-        height: 333px;
-        margin-bottom: 30px;
-
-        @media (max-width: 992px) {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+        @media (min-width: 576px) {
+            margin: 0;
+        }
+        @media (min-width: 768px) {
             width: 250px;
             height: 250px;
         }
-        @media (max-width: 768px) {
-            margin: 0;
-        }
-        @media (max-width: 576px) {
-            width: 180px;
-            height: 180px;
-            margin-bottom: 20px;
+        @media (min-width: 992px) {
+            width: 333px;
+            height: 333px;
+            margin-bottom: 30px;
         }
         & img {
             width: 100%;
@@ -146,26 +146,26 @@
         }
     }
     &__appointment {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         line-height: 125%;
         color: $color-light;
         text-align: center;
-        @media (max-width: 768px) {
+        @media (min-width: 576px) {
             font-size: 18px;
         }
-        @media (max-width: 576px) {
-            font-size: 16px;
+        @media (min-width: 768px) {
+            font-size: 20px;
         }
     }
     &__feedback {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 900;
         line-height: 100%;
         color: $color-accent;
         background-color: #fffefe;
-        @media (max-width: 992px) {
-            font-size: 16px;
+        @media (min-width: 992px) {
+            font-size: 20px;
         }
     }
 }
