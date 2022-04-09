@@ -2,39 +2,39 @@
     padding-right: 25px;
     display: inline - block;
     position: relative;
-    font-size: 18.5px;
+    font-size: 16px;
     font-weight: 900;
     line-height: 108%;
     color: $color-accent;
-    @media (max-width: 576px) {
-        font-size: 16px;
+    @media (min-width: 576px) {
+        font-size: 18.5px;
     }
     &::after {
         content: "";
         position: absolute;
-        top: 6.5px;
+        top: 4px;
         right: 0px;
         transform: rotate(41deg);
         width: 10.5px;
         height: 2.5px;
         background: $color-accent;
         border-radius: 3px;
-        @media (max-width: 576px) {
-            top: 4px;
+        @media (min-width: 576px) {
+            top: 6.5px;
         }
     }
     &::before {
         content: "";
         position: absolute;
-        top: 12px;
+        top: 10px;
         right: 0px;
         transform: rotate(-41deg);
         width: 10.5px;
         height: 2.5px;
         background: $color-accent;
         border-radius: 3px;
-        @media (max-width: 576px) {
-            top: 10px;
+        @media (min-width: 576px) {
+            top: 12px;
         }
     }
     &_back {
@@ -42,29 +42,29 @@
         &::after {
             content: "";
             position: absolute;
-            top: 6.5px;
+            top: 4px;
             left: 0;
             transform: rotate(-41deg);
             width: 10.5px;
             height: 2.5px;
             background: $color-accent;
             border-radius: 3px;
-            @media (max-width: 576px) {
-                top: 4px;
+            @media (min-width: 576px) {
+                top: 6.5px;
             }
         }
         &::before {
             content: "";
             position: absolute;
-            top: 12px;
+            top: 10px;
             left: 0;
             transform: rotate(41deg);
             width: 10.5px;
             height: 2.5px;
             background: $color-accent;
             border-radius: 3px;
-            @media (max-width: 576px) {
-                top: 10px;
+            @media (min-width: 576px) {
+                top: 12px;
             }
         }
     }

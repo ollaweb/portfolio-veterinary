@@ -3,23 +3,22 @@
     &__container {
         display: flex;
         flex-direction: column;
-        @media (max-width: 768px) {
-        }
     }
     &__wrapper {
-        margin-top: 70px;
+        margin-top: 50px;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        @media (max-width: 768px) {
-            margin-top: 50px;
-            flex-direction: column;
+        @media (min-width: 768px) {
+            margin-top: 70px;
+            flex-direction: row;
         }
     }
     &__button {
         margin-top: 20px;
-        margin-left: 40%;
-        @media (max-width: 768px) {
-            margin-left: 0;
+        margin-left: 0;
+        @media (min-width: 768px) {
+            margin-left: 40%;
         }
     }
 }

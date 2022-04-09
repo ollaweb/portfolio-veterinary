@@ -11,22 +11,22 @@
     }
     &_last {
         margin: 0;
-        margin-top: 58px;
-        @media (max-width: 768px) {
+        margin-top: 45px;
+        @media (min-width: 768px) {
             margin: 0;
-            margin-top: 45px;
+            margin-top: 58px;
         }
     }
     &__page {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 500;
         line-height: 150%;
         color: $color-light;
+        @media (min-width: 1400px) {
+            font-size: 20px;
+        }
         &_active {
             color: $color-text;
-        }
-        @media (max-width: 1400px) {
-            font-size: 18px;
         }
     }
 }

@@ -19807,15 +19807,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./src/js/script.js");
-/******/ 	__webpack_require__("./src/js/modules/arrowUp.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	__webpack_require__("./src/js/services/sendDataToServer.js");
+/******/ 	__webpack_require__("./src/js/modules/arrowUp.js");
 /******/ 	__webpack_require__("./src/js/modules/burger.js");
 /******/ 	__webpack_require__("./src/js/modules/modal.js");
 /******/ 	__webpack_require__("./src/js/modules/slickSlider.js");
 /******/ 	__webpack_require__("./src/js/modules/smoothScroll.js");
 /******/ 	__webpack_require__("./src/js/modules/spoiler.js");
-/******/ 	__webpack_require__("./src/js/modules/validate.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/services/sendDataToServer.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/validate.js");
 /******/ 	
 /******/ })()
 ;

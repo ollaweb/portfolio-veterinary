@@ -232,16 +232,18 @@ body._lock {
 }
 
 .main__wrapper {
-  margin-top: 70px;
+  margin-top: 50px;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .main__button {
   margin-top: 20px;
-  margin-left: 40%;
+  margin-left: 0;
 }
 
 .modal-location {
@@ -418,7 +420,16 @@ body._lock {
 }
 
 .burger {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 33px;
+  right: 15px;
+  z-index: 1209;
+  transition: all 0.6s ease-out;
+}
+
+.burger_opened {
+  z-index: 1220;
 }
 
 .burger__wrapper {
@@ -462,13 +473,13 @@ body._lock {
 }
 
 .button {
-  padding: 24px 77px;
-  height: 67px;
+  padding: 10px 40px;
+  height: 45px;
   background: #ffc59e;
   box-shadow: 0px 4px 20px #ffc59e;
   border-radius: 33.5px;
   font-weight: 900;
-  font-size: 18.5px;
+  font-size: 14px;
   line-height: 108%;
   color: #ffffff;
   text-transform: uppercase;
@@ -481,7 +492,7 @@ body._lock {
 
 .block-title {
   font-family: "STIX Two Text", serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 100%;
   color: #080606;
@@ -492,7 +503,7 @@ body._lock {
   padding-right: 25px;
   display: inline-block;
   position: relative;
-  font-size: 18.5px;
+  font-size: 16px;
   font-weight: 900;
   line-height: 108%;
   color: #ffc59e;
@@ -501,7 +512,7 @@ body._lock {
 .more-button::after {
   content: "";
   position: absolute;
-  top: 6.5px;
+  top: 4px;
   right: 0px;
   -webkit-transform: rotate(41deg);
   transform: rotate(41deg);
@@ -514,7 +525,7 @@ body._lock {
 .more-button::before {
   content: "";
   position: absolute;
-  top: 12px;
+  top: 10px;
   right: 0px;
   -webkit-transform: rotate(-41deg);
   transform: rotate(-41deg);
@@ -531,7 +542,7 @@ body._lock {
 .more-button_back::after {
   content: "";
   position: absolute;
-  top: 6.5px;
+  top: 4px;
   left: 0;
   -webkit-transform: rotate(-41deg);
   transform: rotate(-41deg);
@@ -544,7 +555,7 @@ body._lock {
 .more-button_back::before {
   content: "";
   position: absolute;
-  top: 12px;
+  top: 10px;
   left: 0;
   -webkit-transform: rotate(41deg);
   transform: rotate(41deg);
@@ -1839,11 +1850,11 @@ body._lock {
 
 .pages_last {
   margin: 0;
-  margin-top: 58px;
+  margin-top: 45px;
 }
 
 .pages__page {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 150%;
   color: #c3b9b5;
@@ -1954,12 +1965,12 @@ body._lock {
 }
 
 .therapy__order {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
 .therapy__ours {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .services-page {
@@ -1974,7 +1985,8 @@ body._lock {
 }
 
 .services-slider .slick-list {
-  margin: 0 45px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .services-slider .slick-dots {
@@ -2001,15 +2013,17 @@ body._lock {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .article-item__img {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   position: relative;
-  margin-right: 30px;
-  width: 255px;
-  height: 255px;
+  margin: 0 auto 20px;
+  width: 100%;
+  height: 200px;
 }
 
 .article-item__img img {
@@ -2082,7 +2096,7 @@ body._lock {
 
 .article-item__title {
   font-family: "STIX Two Text", serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 400;
   line-height: 150%;
   color: #080606;
@@ -2106,7 +2120,7 @@ body._lock {
 
 .article-item__text {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 125%;
   color: #59443f;
@@ -2505,6 +2519,10 @@ body._lock {
     width: 70%;
   }
 
+  .services-slider .slick-list {
+    width: 70%;
+  }
+
   .expert-slider .slick-list {
     width: 70%;
   }
@@ -2544,6 +2562,34 @@ body._lock {
   .modal__thanks-text {
     padding: 50px;
     font-size: 16.5px;
+  }
+
+  .burger {
+    right: 50px;
+  }
+
+  .block-title {
+    font-size: 32px;
+  }
+
+  .more-button {
+    font-size: 18.5px;
+  }
+
+  .more-button::after {
+    top: 6.5px;
+  }
+
+  .more-button::before {
+    top: 12px;
+  }
+
+  .more-button_back::after {
+    top: 6.5px;
+  }
+
+  .more-button_back::before {
+    top: 12px;
   }
 
   .header__location {
@@ -2672,6 +2718,18 @@ body._lock {
     margin: 0px 10px 0px 0px;
   }
 
+  .article-item a {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .article-item__img {
+    width: 220px;
+    height: 220px;
+    margin: 0;
+    margin-right: 30px;
+  }
+
   .experts-block__item {
     -ms-flex-direction: row;
     flex-direction: row;
@@ -2714,12 +2772,26 @@ body._lock {
     max-width: 960px;
   }
 
+  .main__wrapper {
+    margin-top: 70px;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .main__button {
+    margin-left: 40%;
+  }
+
   .modal_feedback {
     width: 600px;
   }
 
   .modal_thanks {
     width: 500px;
+  }
+
+  .button {
+    padding: 10px 50px;
   }
 
   .header {
@@ -2813,9 +2885,27 @@ body._lock {
     margin-top: -67px;
   }
 
+  .pages_last {
+    margin: 0;
+    margin-top: 58px;
+  }
+
   .appointment-options__item {
     padding: 32px;
     font-size: 16.5px;
+  }
+
+  .therapy__order {
+    margin-top: 20px;
+  }
+
+  .services-slider .slick-list {
+    width: 100%;
+  }
+
+  .article-item__img {
+    width: 180px;
+    height: 180px;
   }
 
   .feedback__pages {
@@ -2827,6 +2917,20 @@ body._lock {
 @media (min-width: 992px) {
   .container {
     max-width: 1140px;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .button {
+    padding: 10px 60px;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .block-title {
+    font-size: 40px;
   }
 
   .header {
@@ -2960,6 +3064,10 @@ body._lock {
     font-size: 16.5px;
   }
 
+  .services-slider .slick-list {
+    margin: 0 45px;
+  }
+
   .experts-block__image {
     width: 100px;
     margin-bottom: 20px;
@@ -3019,6 +3127,12 @@ body._lock {
 @media (min-width: 1200px) {
   .container {
     max-width: 1320px;
+  }
+
+  .button {
+    padding: 24px 77px;
+    height: 67px;
+    font-size: 18.5px;
   }
 
   .header {
@@ -3106,6 +3220,18 @@ body._lock {
     margin: 0px 25px 0px 0px;
   }
 
+  .therapy__ours {
+    margin-top: 100px;
+  }
+
+  .article-item__title {
+    font-size: 30px;
+  }
+
+  .article-item__text {
+    font-size: 20px;
+  }
+
   .personal-card {
     -ms-flex-direction: row;
     flex-direction: row;
@@ -3159,6 +3285,15 @@ body._lock {
   .aside__menu {
     margin: 100px 0px 0px 0px;
     font-size: 19px;
+  }
+
+  .pages__page {
+    font-size: 20px;
+  }
+
+  .article-item__img {
+    width: 255px;
+    height: 255px;
   }
 }
 
@@ -3344,24 +3479,9 @@ body._lock {
   .slider__img_6 {
     height: 600px;
   }
-
-  .pages__page {
-    font-size: 18px;
-  }
-
-  .article-item__img {
-    width: 180px;
-    height: 180px;
-  }
 }
 
 @media (max-width: 1200px) {
-  .button {
-    padding: 10px 60px;
-    height: 55px;
-    font-size: 16px;
-  }
-
   .promo__dots {
     left: 30px;
   }
@@ -3457,42 +3577,9 @@ body._lock {
   .address__descr {
     font-size: 18px;
   }
-
-  .therapy__ours {
-    margin-top: 50px;
-  }
-
-  .article-item__title {
-    font-size: 26px;
-  }
-
-  .article-item__text {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 992px) {
-  .burger {
-    display: block;
-    position: absolute;
-    top: 33px;
-    right: 50px;
-    z-index: 1209;
-    transition: all 0.6s ease-out;
-  }
-
-  .burger_opened {
-    z-index: 1220;
-  }
-
-  .button {
-    padding: 10px 50px;
-  }
-
-  .block-title {
-    font-size: 32px;
-  }
-
   .promo {
     padding: 0;
   }
@@ -3631,29 +3718,9 @@ body._lock {
   .address:not(:last-child) {
     margin: 0px 50px 0px 0px;
   }
-
-  .services-slider .slick-list {
-    margin: 0 auto;
-  }
 }
 
 @media (max-width: 768px) {
-  .main__wrapper {
-    margin-top: 50px;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .main__button {
-    margin-left: 0;
-  }
-
-  .button {
-    padding: 10px 40px;
-    font-size: 14px;
-    height: 45px;
-  }
-
   .promo__links {
     top: 210px;
     left: 120px;
@@ -3777,24 +3844,6 @@ body._lock {
   .address__descr {
     font-size: 14px;
   }
-
-  .pages_last {
-    margin: 0;
-    margin-top: 45px;
-  }
-
-  .therapy__order {
-    margin-top: 30px;
-  }
-
-  .services-slider .slick-list {
-    width: 70%;
-  }
-
-  .article-item__img {
-    width: 220px;
-    height: 220px;
-  }
 }
 
 @media (max-width: 650px) {
@@ -3808,34 +3857,6 @@ body._lock {
 }
 
 @media (max-width: 576px) {
-  .burger {
-    right: 15px;
-  }
-
-  .block-title {
-    font-size: 30px;
-  }
-
-  .more-button {
-    font-size: 16px;
-  }
-
-  .more-button::after {
-    top: 4px;
-  }
-
-  .more-button::before {
-    top: 10px;
-  }
-
-  .more-button_back::after {
-    top: 4px;
-  }
-
-  .more-button_back::before {
-    top: 10px;
-  }
-
   .promo__dots {
     display: block;
     width: 100%;
@@ -3966,23 +3987,6 @@ body._lock {
 
   .address:not(:last-child) {
     margin: 0px 0px 20px 0px;
-  }
-
-  .article-item a {
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .article-item__img {
-    margin: 0 auto 20px;
-    width: 100%;
-    height: 200px;
-  }
-}
-
-@media (max-width: 500px) {
-  .services-slider .slick-list {
-    width: 100%;
   }
 }
 

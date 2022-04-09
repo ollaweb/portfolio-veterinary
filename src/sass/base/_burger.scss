@@ -1,21 +1,19 @@
 .burger {
-    display: none;
-
-    @media (max-width: 992px) {
-        display: block;
-        position: absolute;
-        top: 33px;
+    display: block;
+    position: absolute;
+    top: 33px;
+    right: 15px;
+    z-index: 1209;
+    transition: all 0.6s ease-out;
+    @media (min-width: 576px) {
         right: 50px;
-        z-index: 1209;
-        transition: all 0.6s ease-out;
-        &_opened {
-            z-index: 1220;
-        }
     }
-    @media (max-width: 576px) {
-        right: 15px;
+    @media (min-width: 992px) {
+        display: none;
     }
-
+    &_opened {
+        z-index: 1220;
+    }
     &__wrapper {
         padding: 7px;
         width: 40px;
