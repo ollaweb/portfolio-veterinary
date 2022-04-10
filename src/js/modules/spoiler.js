@@ -41,8 +41,6 @@ function spoiler() {
     }
 
     useSpoiler(".spoiler", ".spoiler__wrapper", ".spoiler-overlay");
-    console.log(document.body.clientWidth);
-    console.log(window.innerWidth);
 
 
 

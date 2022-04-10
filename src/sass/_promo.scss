@@ -1,88 +1,72 @@
 .promo {
-    padding: 65px 0px 0px 0px;
     position: relative;
-    @media (max-width: 1590px) {
+    @media (min-width: 992px) {
         padding: 20px 0px 0px 0px;
     }
-    @media (max-width: 992px) {
-        padding: 0;
+    @media (min-width: 1590px) {
+        padding: 65px 0px 0px 0px;
     }
-
     &__dots {
         position: absolute;
-        top: 65px;
-        left: 110px;
-        width: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
+        top: 94%;
+        left: 0;
+        width: 100%;
         z-index: 1099;
-        @media (max-width: 1400px) {
+        @media (min-width: 576px) {
+            top: 30px;
+            left: 30px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @media (min-width: 1200px) {
             left: 60px;
         }
-        @media (max-width: 1200px) {
-            left: 30px;
-        }
-        @media (max-width: 992px) {
-            top: 30px;
-        }
-        @media (max-width: 576px) {
-            display: block;
-            width: 100%;
-            top: 94%;
-            left: 0;
+        @media (min-width: 1400px) {
+            top: 65px;
+            left: 110px;
         }
         & .slick-dots {
-            // width: 40px;
-            @media (max-width: 576px) {
-                padding: 0px 70px;
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
+            padding: 0px 70px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            @media (min-width: 576px) {
+                padding: 0;
+                display: block;
+                width: auto;
             }
             & li {
                 &:not(:last-child) {
-                    margin: 0px 0px 70px 0px;
-                    @media (max-width: 1400px) {
-                        margin: 0px 0px 50px 0px;
-                    }
-                    @media (max-width: 1200px) {
+                    @media (min-width: 576px) {
                         margin: 0px 0px 30px 0px;
                     }
-                    @media (max-width: 576px) {
-                        margin: 0;
+                    @media (min-width: 1200px) {
+                        margin: 0px 0px 50px 0px;
+                    }
+                    @media (min-width: 1400px) {
+                        margin: 0px 0px 70px 0px;
                     }
                 }
                 &.slick-active {
                     & button {
                         color: $color-text;
-                        // &::after {
-                        //     content: "";
-                        //     position: absolute;
-                        //     top: -30%;
-                        //     left: -113%;
-                        //     width: 40px;
-                        //     height: 40px;
-                        //     border-radius: 100%;
-                        //     border: 2px solid #ede9e8;
-                        //     border-bottom: 2px solid $color-text;
-                        // }
                     }
                 }
             }
-
             & button {
-                font-size: 20px;
+                font-size: 14px;
                 font-weight: 900;
                 color: $color-light;
                 background: inherit;
                 position: relative;
-
-                @media (max-width: 1400px) {
+                @media (min-width: 992px) {
                     font-size: 18px;
                 }
-                @media (max-width: 992px) {
-                    font-size: 14px;
+                @media (min-width: 1400px) {
+                    font-size: 20px;
                 }
             }
         }

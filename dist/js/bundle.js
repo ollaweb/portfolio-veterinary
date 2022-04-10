@@ -1,37 +1,6 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/modules/arrowUp.js":
-/*!***********************************!*\
-  !*** ./src/js/modules/arrowUp.js ***!
-  \***********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-
-function arrowUp() {
-  /*
-  Появление стрелки вверх для прокрутки при скролле вниз на 800 на desktop;
-  при скроле вниз на 600 на планшете и мобильном телфоне
-  */
-  var arrowBlock = document.querySelector(".arrow-up");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY >= 800 && window.innerWidth > 768) {
-      arrowBlock.classList.add("_active");
-    } else if (window.scrollY >= 600 && window.innerWidth <= 768) {
-      arrowBlock.classList.add("_active");
-    } else {
-      arrowBlock.classList.remove("_active");
-    }
-  });
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (arrowUP);
-
-/***/ }),
-
 /***/ "./src/js/modules/burger.js":
 /*!**********************************!*\
   !*** ./src/js/modules/burger.js ***!
@@ -242,7 +211,7 @@ function slickSlider() {
       arrows: false,
       dots: true,
       appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()(".promo__dots"),
-      // autoplay: true,
+      autoplay: true,
       autoplaySpeed: 2000,
       fade: true
     });
@@ -456,8 +425,6 @@ function spoiler() {
   }
 
   useSpoiler(".spoiler", ".spoiler__wrapper", ".spoiler-overlay");
-  console.log(document.body.clientWidth);
-  console.log(window.innerWidth);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (spoiler);
@@ -19808,14 +19775,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./src/js/script.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./src/js/services/sendDataToServer.js");
-/******/ 	__webpack_require__("./src/js/modules/arrowUp.js");
 /******/ 	__webpack_require__("./src/js/modules/burger.js");
 /******/ 	__webpack_require__("./src/js/modules/modal.js");
 /******/ 	__webpack_require__("./src/js/modules/slickSlider.js");
 /******/ 	__webpack_require__("./src/js/modules/smoothScroll.js");
 /******/ 	__webpack_require__("./src/js/modules/spoiler.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/modules/validate.js");
+/******/ 	__webpack_require__("./src/js/modules/validate.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/services/sendDataToServer.js");
 /******/ 	
 /******/ })()
 ;

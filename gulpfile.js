@@ -129,7 +129,7 @@ function js_production() {
         .pipe(webpack({
             mode: 'production',
             output: {
-                filename: 'bundle.min.js'
+                filename: 'bundle.js'
             },
             module: {
                 rules: [

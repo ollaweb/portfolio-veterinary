@@ -9,7 +9,7 @@ function slickSlider() {
             arrows: false,
             dots: true,
             appendDots: $(".promo__dots"),
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
             fade: true,
         });

@@ -865,26 +865,25 @@ body._lock {
 }
 
 .promo {
-  padding: 65px 0px 0px 0px;
   position: relative;
 }
 
 .promo__dots {
   position: absolute;
-  top: 65px;
-  left: 110px;
-  width: 40px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-align: center;
-  align-items: center;
+  display: block;
+  top: 94%;
+  left: 0;
+  width: 100%;
   z-index: 1099;
 }
 
-.promo__dots .slick-dots li:not(:last-child) {
-  margin: 0px 0px 70px 0px;
+.promo__dots .slick-dots {
+  padding: 0px 70px;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .promo__dots .slick-dots li.slick-active button {
@@ -892,7 +891,7 @@ body._lock {
 }
 
 .promo__dots .slick-dots button {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 900;
   color: #c3b9b5;
   background: inherit;
@@ -2618,6 +2617,28 @@ body._lock {
     margin-bottom: 10px;
   }
 
+  .promo__dots {
+    top: 30px;
+    left: 30px;
+    width: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .promo__dots .slick-dots {
+    padding: 0;
+    display: block;
+    width: auto;
+  }
+
+  .promo__dots .slick-dots li:not(:last-child) {
+    margin: 0px 0px 30px 0px;
+  }
+
   .statistics__value {
     padding: 0px 77px;
   }
@@ -3014,6 +3035,14 @@ body._lock {
     display: block;
   }
 
+  .promo {
+    padding: 20px 0px 0px 0px;
+  }
+
+  .promo__dots .slick-dots button {
+    font-size: 18px;
+  }
+
   .statistics {
     padding: 220px 0px 270px;
   }
@@ -3157,6 +3186,14 @@ body._lock {
     width: 9px;
   }
 
+  .promo__dots {
+    left: 60px;
+  }
+
+  .promo__dots .slick-dots li:not(:last-child) {
+    margin: 0px 0px 50px 0px;
+  }
+
   .statistics {
     padding: 317px 0px 323px 0px;
   }
@@ -3278,6 +3315,19 @@ body._lock {
     padding: 0px 0px 0px 235px;
   }
 
+  .promo__dots {
+    top: 65px;
+    left: 110px;
+  }
+
+  .promo__dots .slick-dots li:not(:last-child) {
+    margin: 0px 0px 70px 0px;
+  }
+
+  .promo__dots .slick-dots button {
+    font-size: 20px;
+  }
+
   .aside {
     padding: 0 50px 50px 50px;
   }
@@ -3319,6 +3369,10 @@ body._lock {
   .header {
     padding: 65px 0px;
     font-size: 18.5px;
+  }
+
+  .promo {
+    padding: 65px 0px 0px 0px;
   }
 }
 
@@ -3388,10 +3442,6 @@ body._lock {
 }
 
 @media (max-width: 1590px) {
-  .promo {
-    padding: 20px 0px 0px 0px;
-  }
-
   .promo__links {
     top: 370px;
   }
@@ -3434,18 +3484,6 @@ body._lock {
 }
 
 @media (max-width: 1400px) {
-  .promo__dots {
-    left: 60px;
-  }
-
-  .promo__dots .slick-dots li:not(:last-child) {
-    margin: 0px 0px 50px 0px;
-  }
-
-  .promo__dots .slick-dots button {
-    font-size: 18px;
-  }
-
   .promo__links {
     left: 280px;
   }
@@ -3482,14 +3520,6 @@ body._lock {
 }
 
 @media (max-width: 1200px) {
-  .promo__dots {
-    left: 30px;
-  }
-
-  .promo__dots .slick-dots li:not(:last-child) {
-    margin: 0px 0px 30px 0px;
-  }
-
   .promo__links {
     top: 300px;
     left: 190px;
@@ -3580,18 +3610,6 @@ body._lock {
 }
 
 @media (max-width: 992px) {
-  .promo {
-    padding: 0;
-  }
-
-  .promo__dots {
-    top: 30px;
-  }
-
-  .promo__dots .slick-dots button {
-    font-size: 14px;
-  }
-
   .promo__links {
     top: 230px;
   }
@@ -3857,26 +3875,6 @@ body._lock {
 }
 
 @media (max-width: 576px) {
-  .promo__dots {
-    display: block;
-    width: 100%;
-    top: 94%;
-    left: 0;
-  }
-
-  .promo__dots .slick-dots {
-    padding: 0px 70px;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-
-  .promo__dots .slick-dots li:not(:last-child) {
-    margin: 0;
-  }
-
   .promo__links {
     display: -ms-flexbox;
     display: flex;
