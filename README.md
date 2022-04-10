@@ -1,10 +1,8 @@
-# Landing FLOWER HOUSE
+# Aibolit 
 [Demo website to test my project](https://ollaweb.github.io/portfolio-veterinary/)
 
 ## Time of working
-25 January 2022 - 18 February 2022
-Paused
-08 April - still working...
+25 January 2022 - 18 February 2022  Paused  08 April - still working...
 
 ### Review
 ![Look at this lovely design](https://github.com/ollaweb/portfolio-veterinary/blob/main/src/img/aibolit.jpg)
