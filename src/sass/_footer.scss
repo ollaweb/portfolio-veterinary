@@ -177,6 +177,9 @@
         height: 40px;
         border-radius: 100%;
         background-color: #fff;
+        &:hover {
+            background-color: $color-accent;
+        }
         & img {
             position: relative;
             z-index: 10;

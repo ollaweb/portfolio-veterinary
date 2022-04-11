@@ -11,6 +11,7 @@
 Multy-page project.
 About **CSS**:
 * no Bootstrap;
+* mobile first;
 * BEM tecnology in naming classes;
 * SASS preprocessor in SCSS syntax.
 ---
