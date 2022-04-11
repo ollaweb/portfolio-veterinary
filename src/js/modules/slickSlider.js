@@ -10,7 +10,7 @@ function slickSlider() {
             dots: true,
             appendDots: $(".promo__dots"),
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 4000,
             fade: true,
         });
         $('.experts-slider').slick({

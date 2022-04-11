@@ -1,96 +1,76 @@
 .contacts {
-    padding: 235px 0px 210px 0px;
-
-    @media (max-width: 1200px) {
-        padding: 150px 0px 120px 0px;
-    }
-    @media (max-width: 992px) {
+    padding: 80px 0px 50px 0px;
+    @media (min-width: 576px) {
         padding: 110px 0px 90px 0px;
     }
-    @media (max-width: 576px) {
-        padding: 80px 0px 50px 0px;
+    @media (min-width: 992px) {
+        padding: 150px 0px 120px 0px;
+    }
+    @media (min-width: 1200px) {
+        padding: 235px 0px 210px 0px;
     }
     &__wrapper {
-        margin: 0px 150px;
         display: flex;
         flex-direction: column;
-        @media (max-width: 1800px) {
+        @media (min-width: 1590px) {
             margin: 0px 70px;
         }
-        @media (max-width: 1590px) {
-            margin: 0;
+        @media (min-width: 1800px) {
+            margin: 0px 150px;
         }
     }
     &__title {
         text-align: left;
     }
     &__block {
-        margin: 70px 0px 0px 0px;
+        margin: 20px 0px 0px 0px;
+        flex-direction: column-reverse;
         display: none;
         justify-content: space-between;
         overflow: hidden;
-        @media (max-width: 992px) {
-            margin: 20px 0px 0px 0px;
-            flex-direction: column-reverse;
+        @media (min-width: 992px) {
+            margin: 70px 0px 0px 0px;
+            flex-direction: row;
         }
     }
     &__addresses {
-        margin: 0px 40px 0px 0px;
+        margin: 20px 0px 0px 0px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        @media (max-width: 992px) {
-            margin: 20px 0px 0px 0px;
+        justify-content: flex-start;
+        @media (min-width: 576px) {
             flex-direction: row;
-            justify-content: flex-start;
         }
-        @media (max-width: 768px) {
-            justify-content: space-between;
-        }
-        @media (max-width: 576px) {
+        @media (min-width: 992px) {
+            margin: 0px 40px 0px 0px;
             flex-direction: column;
         }
     }
     &__map {
-        @media (max-width: 1480px) {
-            width: 800px;
-        }
-        @media (max-width: 1200px) {
+        width: 100%;
+        height: 100%;
+        @media (min-width: 992px) {
             width: 640px;
             height: 480px;
         }
-        @media (max-width: 992px) {
-            width: 100%;
-            height: 100%;
+        @media (min-width: 1200px) {
+            width: 800px;
+            height: auto;
         }
-
-        // & iframe {
-        //     @media (max-width: 1480px) {
-        //         width: 800px;
-        //     }
-        //     @media (max-width: 1200px) {
-        //         width: 640px;
-        //         height: 480px;
-        //     }
-        //     @media (max-width: 992px) {
-        //         width: 100%;
-        //         height: 400px;
-        //     }
-        //     @media (max-width: 576px) {
-        //         height: 250px;
-        //     }
-        // }
+        @media (min-width: 1480px) {
+            width: auto;
+        }
     }
     &_only {
-        padding: 50px 0px 180px 0px;
-        @media (max-width: 1200px) {
-            padding: 50px 0px 130px 0px;
-        }
-        @media (max-width: 992px) {
+        padding: 30px 0px 100px 0px;
+        @media (min-width: 576px) {
             padding: 50px 0px 100px 0px;
         }
-        @media (max-width: 576px) {
-            padding: 30px 0px 100px 0px;
+        @media (min-width: 992px) {
+            padding: 50px 0px 130px 0px;
+        }
+        @media (min-width: 1200px) {
+            padding: 50px 0px 180px 0px;
         }
     }
 }
@@ -101,33 +81,34 @@
 
 .address {
     &:not(:last-child) {
-        @media (max-width: 992px) {
-            margin: 0px 50px 0px 0px;
-        }
-        @media (max-width: 768px) {
+        margin: 0px 0px 20px 0px;
+        @media (min-width: 576px) {
             margin: 0px 20px 0px 0px;
         }
-        @media (max-width: 576px) {
-            margin: 0px 0px 20px 0px;
+        @media (min-width: 768px) {
+            margin: 0px 50px 0px 0px;
+        }
+        @media (min-width: 992px) {
+            margin: 0px 0px 30px 0px;
         }
     }
     &__title {
         font-family: "STIX Two Text", serif;
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 400;
         line-height: 133%;
         color: $color-text;
-        @media (max-width: 1200px) {
+        @media (min-width: 768px) {
             font-size: 26px;
         }
-        @media (max-width: 768px) {
-            font-size: 22px;
+        @media (min-width: 1200px) {
+            font-size: 30px;
         }
     }
     &__contacts {
-        margin: 20px 0px 0px 0px;
-        @media (max-width: 768px) {
-            margin: 14px 0px 0px 0px;
+        margin: 14px 0px 0px 0px;
+        @media (min-width: 768px) {
+            margin: 20px 0px 0px 0px;
         }
     }
     &__item {
@@ -137,33 +118,34 @@
             align-items: flex-start;
         }
         &:not(:last-child) {
-            margin: 0px 0px 15px 0px;
-            @media (max-width: 768px) {
-                margin: 0px 0px 10px 0px;
+            margin: 0px 0px 10px 0px;
+            @media (min-width: 768px) {
+                margin: 0px 0px 15px 0px;
             }
         }
     }
     &__img {
-        margin: 0px 20px 0px 0px;
-        @media (max-width: 768px) {
-            margin: 0px 10px 0px 0px;
+        margin: 0px 10px 0px 0px;
+        @media (min-width: 768px) {
+            margin: 0px 20px 0px 0px;
         }
         & img {
-            @media (max-width: 768px) {
-                width: 30px;
+            width: 30px;
+            @media (min-width: 768px) {
+                width: auto;
             }
         }
     }
     &__descr {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 150%;
         color: $color-main;
-        @media (max-width: 1200px) {
+        @media (min-width: 768px) {
             font-size: 18px;
         }
-        @media (max-width: 768px) {
-            font-size: 14px;
+        @media (min-width: 1200px) {
+            font-size: 20px;
         }
     }
 }
